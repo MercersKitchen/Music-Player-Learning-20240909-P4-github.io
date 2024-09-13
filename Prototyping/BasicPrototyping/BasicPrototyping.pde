@@ -1,3 +1,7 @@
+// Install Music
+// Try loop() or play)
+// Install Minim
+//
 //Global Variables
 //
 void setup()
