@@ -13,7 +13,16 @@ void setup()
   //
   // Load Music
   String musicPathway = "Music/";
-  
+  String mp3FileName = ".mp3";
+  String beatYourCompetition = "Beat_Your_Competition";
+  String cycles = "Cycles";
+  String eureka = "Eureka";
+  String ghostWalk = "Ghost_Walk";
+  String groove = "groove";
+  String newsroom = "Newsroom";
+  String startYourEngines = "Start_Your_Engines";
+  String theSimplest = "The_Simplest";
+  //beatYourCompetition.play();
 } //End setup
 //
 void draw() {
