@@ -12,6 +12,7 @@ void setup()
   size(900, 800);
   //
   // Load Music
+  String musicPathway = "Music/";
   
 } //End setup
 //
