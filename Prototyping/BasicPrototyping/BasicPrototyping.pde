@@ -31,6 +31,22 @@ void setup()
   String theSimplest = "The_Simplest";
   //
   //Add Reading into Array
+  String directory = "../../" + musicPathway;
+  println ( currentSong, directory );
+  String file = directory + groove + mp3FileName;
+  //
+  //song[currentSong] = minim.loadFile( "../../Music/groove.mp3" );
+  //
+  //song[currentSong+=1] = minim.loadFile( "../../Music/Start_Your_Engines.mp3" );
+  //song[1].play();
+  //song[currentSong+=1] = minim.loadFile( "../../Music/Beat_Your_Competition.mp3);
+  //song[currentSong+=1] = minim.loadFile( "../../Music/Cycles.mp3 );
+  //song[currentSong+=1] = minim.loadFile( "../../Music/Eureka.mp3 );
+  //song[currentSong+=1] = minim.loadFile( "../../Music/ghostWalk.mp3 );
+  //song[currentSong+=1] = minim.loadFile( "../../Music/Newsroom.mp3 );
+  //song[currentSong+=1] = minim.loadFile( "../../Music/The_Simplest.mp3 );
+
+  
   //Add currentSong as hardcoded link
   //Use play(timeStart) & loop(numberOfLoops)
   //Inspect with println
