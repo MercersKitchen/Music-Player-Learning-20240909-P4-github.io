@@ -34,8 +34,10 @@ void setup()
   String directory = "../../" + musicPathway;
   println ( currentSong, directory );
   String file = directory + groove + mp3FileName;
+  println (file);
   //
-  //song[currentSong] = minim.loadFile( "../../Music/groove.mp3" );
+  song[currentSong] = minim.loadFile( "../../Music/groove.mp3" );
+  println( currentSong, song[currentSong] );
   //
   //song[currentSong+=1] = minim.loadFile( "../../Music/Start_Your_Engines.mp3" );
   //song[1].play();
@@ -45,8 +47,8 @@ void setup()
   //song[currentSong+=1] = minim.loadFile( "../../Music/ghostWalk.mp3 );
   //song[currentSong+=1] = minim.loadFile( "../../Music/Newsroom.mp3 );
   //song[currentSong+=1] = minim.loadFile( "../../Music/The_Simplest.mp3 );
+  song[currentSong].play();
 
-  
   //Add currentSong as hardcoded link
   //Use play(timeStart) & loop(numberOfLoops)
   //Inspect with println
@@ -59,7 +61,6 @@ void setup()
   //
   //DIVs
   //rect() based on variables; variables change with program (introduces parameters of a function and TABS)
-  
 } //End setup
 //
 void draw() {
