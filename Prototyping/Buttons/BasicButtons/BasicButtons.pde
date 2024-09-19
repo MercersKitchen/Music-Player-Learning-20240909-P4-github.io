@@ -49,7 +49,7 @@ void setup()
   file = directory + theSimplest + mp3FileName;
   song[currentSong+=1] = minim.loadFile( file );
   //
-  currentSong = 7;
+  currentSong = 0;
   //
   song[currentSong].play();
   //Use play(timeStart) & loop(numberOfLoops)
