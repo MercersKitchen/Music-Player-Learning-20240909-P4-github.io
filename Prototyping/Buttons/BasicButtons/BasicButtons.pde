@@ -31,41 +31,25 @@ void setup()
   String theSimplest = "The_Simplest";
   //
   //Add Reading into Array
-  String directory = "../../" + musicPathway;
-  println ( currentSong, directory );
+  String directory = "../../../" + musicPathway;
   String file = directory + groove + mp3FileName;
-  println (file);
   song[currentSong] = minim.loadFile( file );
   file = directory + startYourEngines + mp3FileName;
-  println (file);
   song[currentSong+=1] = minim.loadFile( file );
-  println( currentSong, song[currentSong] );
   file = directory + beatYourCompetition + mp3FileName;
-  println (file);
   song[currentSong+=1] = minim.loadFile( file );
-  println( currentSong, song[currentSong] );
   file = directory + cycles + mp3FileName;
-  println (file);
   song[currentSong+=1] = minim.loadFile( file );
-  println( currentSong, song[currentSong] );
   file = directory + eureka + mp3FileName;
-  println (file);
   song[currentSong+=1] = minim.loadFile( file );
-  println( currentSong, song[currentSong] );
   file = directory + ghostWalk + mp3FileName;
-  println (file);
   song[currentSong+=1] = minim.loadFile( file );
-  println( currentSong, song[currentSong] );
   file = directory + newsroom + mp3FileName;
-  println (file);
   song[currentSong+=1] = minim.loadFile( file );
-  println( currentSong, song[currentSong] );
   file = directory + theSimplest + mp3FileName;
-  println (file);
   song[currentSong+=1] = minim.loadFile( file );
-  println( currentSong, song[currentSong] );
   //
-  currentSong = 0;
+  currentSong = 7;
   //
   song[currentSong].play();
   //Use play(timeStart) & loop(numberOfLoops)
