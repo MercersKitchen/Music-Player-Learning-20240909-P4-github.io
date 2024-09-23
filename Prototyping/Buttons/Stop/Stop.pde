@@ -59,6 +59,8 @@ void setup()
   //
   //DIVs
   //rect() based on variables; variables change with program (introduces parameters of a function and TABS)
+  //rect( X, Y, Width, Height );
+  rect( width*1/2, height*1/2, width*1/4, height*1/4 ); //stopX, stopY, stopWidth, stopHeight
 } //End setup
 //
 void draw() {
