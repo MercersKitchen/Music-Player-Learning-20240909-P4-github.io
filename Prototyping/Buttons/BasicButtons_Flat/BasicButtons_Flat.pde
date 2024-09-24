@@ -24,6 +24,8 @@ void setup()
   musicButtonHeight = appHeight*1/2;
   musicButtonX = musicButtonWidth - musicButtonWidth*1/2;
   musicButtonY = musicButtonHeight - musicButtonHeight*1/2;
+  //Note: any music button is square
+  //Use if statement to change, introduce ternary operator
   //
   minim = new Minim(this); //load from data directory, loadFile should also load from project folder
   //
