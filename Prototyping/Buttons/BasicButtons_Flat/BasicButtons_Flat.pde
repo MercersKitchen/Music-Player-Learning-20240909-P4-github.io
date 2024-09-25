@@ -13,10 +13,11 @@ int currentSong = numberOfSongs - numberOfSongs;  //beginning current song as ZE
 //
 int appWidth, appHeight;
 float musicButtonX, musicButtonY, musicButtonWidth, musicButtonHeight;
+float stopX, stopY, stopWidth, stopHeight;
 //
 void setup()
 {
-  size(900, 800);
+  size(300, 800);
   appWidth = width;
   appHeight = height;
   //Variables for any music button
@@ -32,6 +33,14 @@ void setup()
     musicButtonHeight = musicButtonWidth;
   }
   //Use if statement to change, introduce ternary operator
+  //
+  //Population (Variables)
+  float padding = 1.0/4.0;
+  float stopButtonSize = 1.0-(1.0/4.0);
+  stopWidth = musicButtonWidth*stopButtonSize; //stopButtonSize
+  stopHeight = musicButtonHeight*stopButtonSize; //stopButtonSize
+  stopX = musicButtonX+padding;
+  stopY = musicButtonY+padding;
   //
   minim = new Minim(this); //load from data directory, loadFile should also load from project folder
   //
