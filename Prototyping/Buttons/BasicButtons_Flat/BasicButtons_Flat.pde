@@ -24,7 +24,13 @@ void setup()
   musicButtonHeight = appHeight*1/2;
   musicButtonX = musicButtonWidth - musicButtonWidth*1/2;
   musicButtonY = musicButtonHeight - musicButtonHeight*1/2;
-  //Note: any music button is square
+  if ( musicButtonWidth >= musicButtonHeight ) { //error: square does not go in the middle
+    // musicButtonWidth needs to change
+    musicButtonWidth = musicButtonHeight;
+  } else {
+    // musicButtonHeight needs to change
+    musicButtonHeight = musicButtonWidth;
+  }
   //Use if statement to change, introduce ternary operator
   //
   minim = new Minim(this); //load from data directory, loadFile should also load from project folder
@@ -76,6 +82,10 @@ void setup()
 } //End setup
 //
 void draw() {
+  background(200); // Gray Scale: 0-255
+  rect( musicButtonX, musicButtonY, musicButtonWidth, musicButtonHeight );
+  //fill();
+  rect( stopX, stopY, stopWidth, stopHeight );
 } //End draw
 //
 void mousePressed() {
