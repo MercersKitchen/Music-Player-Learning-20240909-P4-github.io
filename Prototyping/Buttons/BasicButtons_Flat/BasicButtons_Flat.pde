@@ -101,7 +101,7 @@ void setup()
 //
 void draw() {
   //background(200); // Gray Scale: 0-255
-  //rect( musicButtonSquareX, musicButtonSquareY, musicButtonSquareWidth, musicButtonSquareHeight ); //Square
+  rect( musicButtonSquareX, musicButtonSquareY, musicButtonSquareWidth, musicButtonSquareHeight );
   //fill();
   //rect( stopX, stopY, stopWidth, stopHeight );
 } //End draw
