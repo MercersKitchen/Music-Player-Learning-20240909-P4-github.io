@@ -18,7 +18,7 @@ float stopX, stopY, stopWidth, stopHeight;
 //
 void setup()
 {
-  size(400, 800);
+  size(1000, 800);
   appWidth = width;
   appHeight = height;
   //Variables for any music button
