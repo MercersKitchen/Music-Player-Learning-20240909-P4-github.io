@@ -11,9 +11,56 @@ int numberOfSongs = 8; //Able to Autodetect based on Pathway
 AudioPlayer[] song = new AudioPlayer[numberOfSongs];
 int currentSong = numberOfSongs - numberOfSongs;  //beginning current song as ZERO
 //
+int appWidth, appHeight;
+float musicButtonDIV_X, musicButtonDIV_Y, musicButtonDIV_Width, musicButtonDIV_Height;
+float musicButtonSquareX, musicButtonSquareY, musicButtonSquareWidth, musicButtonSquareHeight;
+float stopX, stopY, stopWidth, stopHeight;
+//
 void setup()
 {
-  size(900, 800);
+  size(1000, 800);
+  appWidth = width;
+  appHeight = height;
+  //Variables for any music button
+  musicButtonDIV_Width = appWidth*1/2;
+  musicButtonDIV_Height = appHeight*1/2;
+  musicButtonDIV_X = musicButtonDIV_Width - musicButtonDIV_Width*1/2;
+  musicButtonDIV_Y = musicButtonDIV_Height- musicButtonDIV_Height*1/2;
+  //Use if statement to change, introduce ternary operator
+  //
+  //Population (Variables)
+  //Work out a case Study: 
+  if ( musicButtonDIV_Width >= musicButtonDIV_Height ) { // Landscape //error: square does not go in the middle
+   // musicButtonWidth needs to change
+   musicButtonSquareWidth = musicButtonDIV_Height ;
+   musicButtonSquareHeight = musicButtonDIV_Height ;
+   float padding1 = musicButtonDIV_Width - musicButtonDIV_Height; //working out value needed, with formulae
+   float padding2 = padding1*1/2; ////working out value needed, with formulae
+   musicButtonSquareX = musicButtonDIV_X + padding2 ; //note: minus moves it the wrong way, difficult to see
+   musicButtonSquareY = musicButtonDIV_Y;
+   println( musicButtonDIV_X, musicButtonDIV_Y, musicButtonDIV_Width, musicButtonDIV_Height );
+   println ( musicButtonSquareX, musicButtonSquareY, musicButtonSquareWidth, musicButtonSquareHeight );
+   println ( padding1 );
+   } else { //Portrait
+   // musicButtonHeight needs to change
+   musicButtonSquareWidth = musicButtonDIV_Width ;
+   musicButtonSquareHeight = musicButtonDIV_Width;
+   float padding1 = musicButtonDIV_Height - musicButtonDIV_Width; //working out value needed, with formulae
+   float padding2 = padding1*1/2; ////working out value needed, with formulae
+   musicButtonSquareX = musicButtonDIV_X; //note: minus moves it the wrong way, difficult to see
+   musicButtonSquareY = musicButtonDIV_Y + padding2;
+   println( musicButtonDIV_X, musicButtonDIV_Y, musicButtonDIV_Width, musicButtonDIV_Height );
+   println ( musicButtonSquareX, musicButtonSquareY, musicButtonSquareWidth, musicButtonSquareHeight );
+   println ( padding1 );
+   }
+  //float padding = 1.0/4.0;
+  //float stopButtonSize = 1.0-(1.0/4.0);
+  /*
+  stopWidth = musicButtonDIV_Width*stopButtonSize; //stopButtonSize
+   stopHeight = musicButtonDIV_Height*stopButtonSize; //stopButtonSize
+   stopX = musicButtonDIV_X+padding;
+   stopY = musicButtonDIV_Y+padding;
+   */
   //
   minim = new Minim(this); //load from data directory, loadFile should also load from project folder
   //
@@ -60,10 +107,14 @@ void setup()
   //DIVs
   //rect() based on variables; variables change with program (introduces parameters of a function and TABS)
   //rect( X, Y, Width, Height );
-  rect( width*1/2, height*1/2, width*1/4, height*1/4 ); //stopX, stopY, stopWidth, stopHeight
+  //rect( musicButtonDIV_X, musicButtonDIV_Y, musicButtonDIV_Width, musicButtonDIV_Height );
 } //End setup
 //
 void draw() {
+  //background(200); // Gray Scale: 0-255
+  rect( musicButtonSquareX, musicButtonSquareY, musicButtonSquareWidth, musicButtonSquareHeight );
+  //fill();
+  rect( stopX, stopY, stopWidth, stopHeight );
 } //End draw
 //
 void mousePressed() {

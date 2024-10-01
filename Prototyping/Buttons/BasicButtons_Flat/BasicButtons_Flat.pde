@@ -107,14 +107,14 @@ void setup()
   //DIVs
   //rect() based on variables; variables change with program (introduces parameters of a function and TABS)
   //rect( X, Y, Width, Height );
-  rect( musicButtonDIV_X, musicButtonDIV_Y, musicButtonDIV_Width, musicButtonDIV_Height );
+  //rect( musicButtonDIV_X, musicButtonDIV_Y, musicButtonDIV_Width, musicButtonDIV_Height );
 } //End setup
 //
 void draw() {
   //background(200); // Gray Scale: 0-255
   rect( musicButtonSquareX, musicButtonSquareY, musicButtonSquareWidth, musicButtonSquareHeight );
   //fill();
-  //rect( stopX, stopY, stopWidth, stopHeight );
+  rect( stopX, stopY, stopWidth, stopHeight );
 } //End draw
 //
 void mousePressed() {
