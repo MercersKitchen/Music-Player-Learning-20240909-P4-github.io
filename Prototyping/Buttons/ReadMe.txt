@@ -32,4 +32,13 @@ in Global Variables
 What does a STOP Button do, exactly
 Introduce how a computer is dumb
 
+rect() + rounded edges
+line(), thickness as strokeWeight(), ends as strokeCap()
+
+Advanced Drawing - student designed images
+strokeJoin()
+
+Search for more advanced ways of drawing
+beginShape()
+
 --- 
