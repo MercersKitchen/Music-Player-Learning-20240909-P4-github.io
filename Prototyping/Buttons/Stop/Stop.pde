@@ -12,9 +12,10 @@ AudioPlayer[] song = new AudioPlayer[numberOfSongs];
 int currentSong = numberOfSongs - numberOfSongs;  //beginning current song as ZERO
 //
 int appWidth, appHeight;
-float musicButtonDIV_X, musicButtonDIV_Y, musicButtonDIV_Width, musicButtonDIV_Height;
-float musicButtonSquareX, musicButtonSquareY, musicButtonSquareWidth, musicButtonSquareHeight;
-float stopX, stopY, stopWidth, stopHeight;
+//CAUTION: IF Statement Variable Population
+float musicButtonDIV_X=0.0, musicButtonDIV_Y=0.0, musicButtonDIV_Width=0.0, musicButtonDIV_Height=0.0;
+float musicButtonSquareX=0.0, musicButtonSquareY=0.0, musicButtonSquareWidth=0.0, musicButtonSquareHeight=0.0;
+float stopX=0.0, stopY=0.0, stopWidth=0.0, stopHeight=0.0;
 //
 void setup()
 {
@@ -53,6 +54,13 @@ void setup()
     println ( musicButtonSquareX, musicButtonSquareY, musicButtonSquareWidth, musicButtonSquareHeight );
     println ( padding1 );
   }
+
+  stopX = musicButtonSquareX + musicButtonSquareX*1/4; 
+  stopY = musicButtonSquareY + musicButtonSquareY*1/4; 
+  stopWidth = musicButtonSquareWidth*1/2;
+  stopHeight = musicButtonSquareHeight*1/2;
+  println( stopX, stopY, stopWidth, stopHeight );
+  //
   /* Music Button Square Formulae for IF Statment Above
   // Use Paper Folding and Case Study
   float padding = 1.0/5.0;
@@ -108,7 +116,7 @@ void setup()
   //DIVs
   //rect() based on variables; variables change with program (introduces parameters of a function and TABS)
   //rect( X, Y, Width, Height );
-  //rect( musicButtonDIV_X, musicButtonDIV_Y, musicButtonDIV_Width, musicButtonDIV_Height );
+  rect( musicButtonDIV_X, musicButtonDIV_Y, musicButtonDIV_Width, musicButtonDIV_Height );
 } //End setup
 //
 void draw() {
