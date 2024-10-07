@@ -13,9 +13,9 @@ int currentSong = numberOfSongs - numberOfSongs;  //beginning current song as ZE
 //
 int appWidth, appHeight;
 //CAUTION: IF Statement Variable Population
-float musicButtonDIV_X=0.0, musicButtonDIV_Y=0.0, musicButtonDIV_Width=0.0, musicButtonDIV_Height=0.0;
-float musicButtonSquareX=0.0, musicButtonSquareY=0.0, musicButtonSquareWidth=0.0, musicButtonSquareHeight=0.0;
-float stopX=0.0, stopY=0.0, stopWidth=0.0, stopHeight=0.0;
+float musicButtonDIV_X, musicButtonDIV_Y, musicButtonDIV_Width, musicButtonDIV_Height;
+float musicButtonSquareX, musicButtonSquareY, musicButtonSquareWidth, musicButtonSquareHeight;
+float stopX, stopY, stopWidth, stopHeight;
 //
 void setup()
 {
@@ -39,9 +39,9 @@ void setup()
     float padding2 = padding1*1/2; ////working out value needed, with formulae
     musicButtonSquareX = musicButtonDIV_X + padding2 ; //note: minus moves it the wrong way, difficult to see
     musicButtonSquareY = musicButtonDIV_Y;
-    println( musicButtonDIV_X, musicButtonDIV_Y, musicButtonDIV_Width, musicButtonDIV_Height );
+    //println( musicButtonDIV_X, musicButtonDIV_Y, musicButtonDIV_Width, musicButtonDIV_Height );
     println ( musicButtonSquareX, musicButtonSquareY, musicButtonSquareWidth, musicButtonSquareHeight );
-    println ( padding1 );
+    //println ( padding1 );
   } else { //Portrait
     // musicButtonHeight needs to change
     musicButtonSquareWidth = musicButtonDIV_Width ;
@@ -50,20 +50,20 @@ void setup()
     float padding2 = padding1*1/2; ////working out value needed, with formulae
     musicButtonSquareX = musicButtonDIV_X; //note: minus moves it the wrong way, difficult to see
     musicButtonSquareY = musicButtonDIV_Y + padding2;
-    println( musicButtonDIV_X, musicButtonDIV_Y, musicButtonDIV_Width, musicButtonDIV_Height );
+    //println( musicButtonDIV_X, musicButtonDIV_Y, musicButtonDIV_Width, musicButtonDIV_Height );
     println ( musicButtonSquareX, musicButtonSquareY, musicButtonSquareWidth, musicButtonSquareHeight );
-    println ( padding1 );
+    //println ( padding1 );
   }
-
-  stopX = musicButtonSquareX + musicButtonSquareX*1/4; 
-  stopY = musicButtonSquareY + musicButtonSquareY*1/4; 
   stopWidth = musicButtonSquareWidth*1/2;
   stopHeight = musicButtonSquareHeight*1/2;
-  println( stopX, stopY, stopWidth, stopHeight );
+  stopX = musicButtonSquareX + musicButtonSquareWidth*1/4;
+  stopY = musicButtonSquareY + musicButtonSquareHeight*1/4;
+
+  println( stopX, stopY, stopWidth, stopHeight, stopX+stopWidth );
   //
   /* Music Button Square Formulae for IF Statment Above
-  // Use Paper Folding and Case Study
-  float padding = 1.0/5.0;
+   // Use Paper Folding and Case Study
+   float padding = 1.0/5.0;
    float stopButtonSize = musicButtonSquareWidth*3/5;
    stopWidth = stopButtonSize;
    stopHeight = stopButtonSize;
@@ -116,14 +116,20 @@ void setup()
   //DIVs
   //rect() based on variables; variables change with program (introduces parameters of a function and TABS)
   //rect( X, Y, Width, Height );
-  rect( musicButtonDIV_X, musicButtonDIV_Y, musicButtonDIV_Width, musicButtonDIV_Height );
+  //rect( musicButtonDIV_X, musicButtonDIV_Y, musicButtonDIV_Width, musicButtonDIV_Height );
 } //End setup
 //
 void draw() {
   //background(200); // Gray Scale: 0-255
+  //println( "DIV:", musicButtonDIV_X, musicButtonDIV_Y, musicButtonDIV_Width, musicButtonDIV_Height, musicButtonDIV_X+musicButtonDIV_Width, musicButtonDIV_Y+musicButtonDIV_Height );
+  println ( "Square:", musicButtonSquareX, musicButtonSquareY, musicButtonSquareWidth, musicButtonSquareHeight, musicButtonSquareX+musicButtonSquareWidth, musicButtonSquareY+musicButtonSquareHeight );
+  //
   rect( musicButtonSquareX, musicButtonSquareY, musicButtonSquareWidth, musicButtonSquareHeight );
   //fill();
   rect( stopX, stopY, stopWidth, stopHeight );
+  //
+  println("StopX:", stopX, stopY, stopWidth, stopHeight, stopX+stopWidth, stopY+stopHeight );
+  println("Mouse:", mouseX, mouseY);
 } //End draw
 //
 void mousePressed() {
