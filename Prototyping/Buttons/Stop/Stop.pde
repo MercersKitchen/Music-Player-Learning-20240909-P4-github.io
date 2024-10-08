@@ -30,7 +30,7 @@ void setup()
   //Use if statement to change, introduce ternary operator
   //
   //Population (Variables)
-  //Work out a case Study: shorter side of DIV
+  //Work out a case Study: shorter  side of DIV
   if ( musicButtonDIV_Width >= musicButtonDIV_Height ) { // Landscape //error: square does not go in the middle
     // musicButtonWidth needs to change
     musicButtonSquareWidth = musicButtonDIV_Height ;
