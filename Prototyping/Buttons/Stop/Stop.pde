@@ -18,6 +18,7 @@ float musicButtonSquareX, musicButtonSquareY, musicButtonSquareWidth, musicButto
 float stopX, stopY, stopWidth, stopHeight;
 //
 color purple=#DB05FF, yellow=#E9FF00;
+color stopButtonHoverOver;
 //
 void setup()
 {
@@ -121,12 +122,12 @@ void draw() {
   //if ( day ) {} else if ( dark ) {} else {}
   //
   if ( mouseX>musicButtonSquareX && mouseX<musicButtonSquareX+musicButtonSquareWidth && mouseY>musicButtonSquareY && mouseY<musicButtonSquareY+musicButtonSquareHeight ) {
-    fill(yellow); //Colour
+    stopButtonHoverOver = yellow;
   } else {
-    fill(purple); //Colour
+    stopButtonHoverOver = purple;
   }
-  
-  
+  fill(stopButtonHoverOver);
+  //
   //stroke(); //Colour
   //
   rect( stopX, stopY, stopWidth, stopHeight ); //(X, Y, width, height, roundedEdge1, roundedEdge2, roundedEdge3, roundedEdge4, )
@@ -147,6 +148,7 @@ void mousePressed() {
 void keyPressed() {
   //Note: CAP Lock with ||
   //if ( key==? || key==? ) ;
+  if ( key==? || key==? ) ;
 } //End keyPressed
 //
 // End Main Program
