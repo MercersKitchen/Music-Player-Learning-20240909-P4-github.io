@@ -42,3 +42,9 @@ Search for more advanced ways of drawing
 beginShape()
 
 --- 
+
+Music Button Shortcuts Algorithms
+P: simple play as loop-zero
+S: single press pause, double press rewind (note: stop pauses song and cues it to the beginning
+
+---
