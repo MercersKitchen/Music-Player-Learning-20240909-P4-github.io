@@ -148,7 +148,7 @@ void mousePressed() {
 void keyPressed() {
   //Note: CAP Lock with ||
   //if ( key==? || key==? ) ;
-  if ( key==? || key==? ) ;
+  if ( key=='s' || key=='S' ) song[currentSong].pause();
 } //End keyPressed
 //
 // End Main Program
