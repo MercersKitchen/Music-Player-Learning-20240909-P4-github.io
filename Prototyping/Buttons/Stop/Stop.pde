@@ -106,14 +106,14 @@ void setup()
 } //End setup
 //
 void draw() {
-  background(0); // Gray Scale: 0-255
+  background(0); //Gray Scale: 0-255, full BLUE Colour
   //
   rect( musicButtonSquareX, musicButtonSquareY, musicButtonSquareWidth, musicButtonSquareHeight );
   //
   /* Note: 3 types of colour, in pairs for hoverover
-   - Day: TBA | TBA (Hoverover)
-   - Dark: TBA | TBA (Hoverover)
-   - Night, no blue: TBA | TBA (Hoverover)
+   - Day: TBA-foreground | TBA-background (Hoverover)
+   - Dark: TBA-foreground | TBA-background (Hoverover)
+   - Night, no blue: TBA-foreground | TBA-background (Hoverover)
    - Dark Mode is for all the time, how bright the screen is and eye strain
    - API: when does sunrise, when does sunset, is the system time within those hours
    - Night mode is for all the time or just
@@ -121,13 +121,13 @@ void draw() {
    */
   //if ( day ) {} else if ( dark ) {} else {}
   //
+  //Hoverover IF - Used in all other buttons too
   if ( mouseX>musicButtonSquareX && mouseX<musicButtonSquareX+musicButtonSquareWidth && mouseY>musicButtonSquareY && mouseY<musicButtonSquareY+musicButtonSquareHeight ) {
     stopButtonHoverOver = yellow;
   } else {
     stopButtonHoverOver = purple;
   }
   fill(stopButtonHoverOver);
-  //
   //stroke(); //Colour
   //
   rect( stopX, stopY, stopWidth, stopHeight ); //(X, Y, width, height, roundedEdge1, roundedEdge2, roundedEdge3, roundedEdge4, )
@@ -136,19 +136,49 @@ void draw() {
   //
   //Music Buttons Interactions: cascading IFs can become AND Statements
   //Note: keypressed must have click on screen
-  //song[currentSong].isPlaying();
   //
 } //End draw
 //
 void mousePressed() {
   //Boolean for Click
   //if() {} else {}
+  //
+  /* STOP Button Mouse Press, after Hoverover
+   Must have Hoverover to ensure mouse will activate, visual confirmation of algorithm
+   */
+  /* if ( mouseX>musicButtonSquareX && mouseX<musicButtonSquareX+musicButtonSquareWidth && mouseY>musicButtonSquareY && mouseY<musicButtonSquareY+musicButtonSquareHeight ) {
+   if ( song[currentSong].isPlaying() ) {
+   song[currentSong].pause(); //single tap
+   } else {
+   song[currentSong].rewind(); //double tap
+   }
+   }
+   */
+  //
 } //End mousePressed
 //
 void keyPressed() {
-  //Note: CAP Lock with ||
-  //if ( key==? || key==? ) ;
-  if ( key=='s' || key=='S' ) song[currentSong].pause();
+  /* Key Board Short Cuts ... learning what the Music Buttons could be
+   Note: CAP Lock with ||
+   if ( key==? || key==? ) ;
+   */
+  if ( key=='P' || key=='p' ) song[currentSong].play(); //Simple Play, no double tap possible
+  //
+  //if ( key=='P' || key=='p' ) song[currentSong].loop(0); //Simple Play, double tap possible
+  /* Note: double tap is automatic rewind, no pause
+   Simble is two triangles
+   This changes what the button might become after it is pressed
+   */
+  if ( key=='S' || key=='s' ) song[currentSong].pause(); //Simple Stop, no double taps
+  //
+  /* if ( key=='S' | key=='s' ) {
+   if ( song[currentSong].isPlaying() ) {
+   song[currentSong].pause(); //single tap
+   } else {
+   song[currentSong].rewind(); //double tap
+   }
+   }
+   */
 } //End keyPressed
 //
 // End Main Program
