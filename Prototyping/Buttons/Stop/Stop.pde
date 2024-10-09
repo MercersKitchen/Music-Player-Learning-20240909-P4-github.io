@@ -17,6 +17,8 @@ float musicButtonDIV_X, musicButtonDIV_Y, musicButtonDIV_Width, musicButtonDIV_H
 float musicButtonSquareX, musicButtonSquareY, musicButtonSquareWidth, musicButtonSquareHeight;
 float stopX, stopY, stopWidth, stopHeight;
 //
+color purple=#DB05FF, yellow=#E9FF00;
+//
 void setup()
 {
   size(1000, 800);
@@ -103,7 +105,7 @@ void setup()
 } //End setup
 //
 void draw() {
-  //background(200); // Gray Scale: 0-255
+  background(0); // Gray Scale: 0-255
   //
   rect( musicButtonSquareX, musicButtonSquareY, musicButtonSquareWidth, musicButtonSquareHeight );
   //
@@ -118,11 +120,17 @@ void draw() {
    */
   //if ( day ) {} else if ( dark ) {} else {}
   //
-  //fill(); //Colour
+  if ( mouseX>musicButtonSquareX && mouseX<musicButtonSquareX+musicButtonSquareWidth && mouseY>musicButtonSquareY && mouseY<musicButtonSquareY+musicButtonSquareHeight ) {
+    fill(yellow); //Colour
+  } else {
+    fill(purple); //Colour
+  }
+  
+  
   //stroke(); //Colour
   //
   rect( stopX, stopY, stopWidth, stopHeight ); //(X, Y, width, height, roundedEdge1, roundedEdge2, roundedEdge3, roundedEdge4, )
-  //noFill();
+  fill(255); //noFill();
   //noStroke();
   //
   //Music Buttons Interactions: cascading IFs can become AND Statements
@@ -137,7 +145,7 @@ void mousePressed() {
 } //End mousePressed
 //
 void keyPressed() {
-  //Note: CAP Lock with || 
+  //Note: CAP Lock with ||
   //if ( key==? || key==? ) ;
 } //End keyPressed
 //
