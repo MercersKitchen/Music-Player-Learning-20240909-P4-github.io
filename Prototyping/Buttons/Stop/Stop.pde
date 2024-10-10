@@ -146,14 +146,13 @@ void mousePressed() {
   /* STOP Button Mouse Press, after Hoverover
    Must have Hoverover to ensure mouse will activate, visual confirmation of algorithm
    */
-  /* if ( mouseX>musicButtonSquareX && mouseX<musicButtonSquareX+musicButtonSquareWidth && mouseY>musicButtonSquareY && mouseY<musicButtonSquareY+musicButtonSquareHeight ) {
-   if ( song[currentSong].isPlaying() ) {
-   song[currentSong].pause(); //single tap
-   } else {
-   song[currentSong].rewind(); //double tap
-   }
-   }
-   */
+  if ( mouseX>musicButtonSquareX && mouseX<musicButtonSquareX+musicButtonSquareWidth && mouseY>musicButtonSquareY && mouseY<musicButtonSquareY+musicButtonSquareHeight ) {
+    if ( song[currentSong].isPlaying() ) {
+      song[currentSong].pause(); //single tap
+    } else {
+      song[currentSong].rewind(); //double tap
+    }
+  }
   //
 } //End mousePressed
 //
@@ -162,23 +161,22 @@ void keyPressed() {
    Note: CAP Lock with ||
    if ( key==? || key==? ) ;
    */
-  if ( key=='P' || key=='p' ) song[currentSong].play(); //Simple Play, no double tap possible
+  //if ( key=='P' || key=='p' ) song[currentSong].play(); //Simple Play, no double tap possible
   //
-  //if ( key=='P' || key=='p' ) song[currentSong].loop(0); //Simple Play, double tap possible
+  if ( key=='P' || key=='p' ) song[currentSong].loop(0); //Simple Play, double tap possible
   /* Note: double tap is automatic rewind, no pause
    Simble is two triangles
    This changes what the button might become after it is pressed
    */
-  if ( key=='S' || key=='s' ) song[currentSong].pause(); //Simple Stop, no double taps
+  //if ( key=='S' || key=='s' ) song[currentSong].pause(); //Simple Stop, no double taps
   //
-  /* if ( key=='S' | key=='s' ) {
-   if ( song[currentSong].isPlaying() ) {
-   song[currentSong].pause(); //single tap
-   } else {
-   song[currentSong].rewind(); //double tap
-   }
-   }
-   */
+  if ( key=='S' | key=='s' ) {
+    if ( song[currentSong].isPlaying() ) {
+      song[currentSong].pause(); //single tap
+    } else {
+      song[currentSong].rewind(); //double tap
+    }
+  }
 } //End keyPressed
 //
 // End Main Program
