@@ -128,11 +128,11 @@ void draw() {
     stopButtonHoverOver = purple;
   }
   fill(stopButtonHoverOver);
-  //stroke(); //Colour
+  noStroke(); //Colour
   //
   rect( stopX, stopY, stopWidth, stopHeight ); //(X, Y, width, height, roundedEdge1, roundedEdge2, roundedEdge3, roundedEdge4, )
   fill(255); //noFill();
-  //noStroke();
+  stroke(1); //Reset default
   //
   //Music Buttons Interactions: cascading IFs can become AND Statements
   //Note: keypressed must have click on screen
