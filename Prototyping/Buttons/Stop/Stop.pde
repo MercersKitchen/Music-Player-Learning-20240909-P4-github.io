@@ -123,9 +123,9 @@ void draw() {
   //
   //Hoverover IF - Used in all other buttons too
   if ( mouseX>musicButtonSquareX && mouseX<musicButtonSquareX+musicButtonSquareWidth && mouseY>musicButtonSquareY && mouseY<musicButtonSquareY+musicButtonSquareHeight ) {
-    stopButtonHoverOver = yellow;
+    stopButtonHoverOver = yellow; // Single Line IFs for Day, Dark, and Night Booleans
   } else {
-    stopButtonHoverOver = purple;
+    stopButtonHoverOver = purple; // Single Line IFs for Day, Dark, and Night Booleans
   }
   fill(stopButtonHoverOver);
   noStroke(); //Colour
