@@ -165,7 +165,7 @@ void keyPressed() {
   //
   if ( key=='P' || key=='p' ) song[currentSong].loop(0); //Simple Play, double tap possible
   /* Note: double tap is automatic rewind, no pause
-   Simble is two triangles
+   Symbol is two triangles
    This changes what the button might become after it is pressed
    */
   //if ( key=='S' || key=='s' ) song[currentSong].pause(); //Simple Stop, no double taps
