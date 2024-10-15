@@ -111,9 +111,9 @@ void draw() {
   rect( musicButtonSquareX, musicButtonSquareY, musicButtonSquareWidth, musicButtonSquareHeight );
   //
   /* Note: 3 types of colour, in pairs for hoverover
-   - Day: TBA-foreground | TBA-background (Hoverover)
-   - Dark: TBA-foreground | TBA-background (Hoverover)
-   - Night, no blue: TBA-foreground | TBA-background (Hoverover)
+   - Day, Foreground: #DB05FF | Hoverover: #037EFF | Background: #FFFFFF
+   - Dark, Foreground: #DB05FF | Hoverover: #E9FF00 | Background: #000000
+   - Night, no blue, Foreground: #00FF00 | Hoverover: #E9FF00 | Background: #000000
    - Dark Mode is for all the time, how bright the screen is and eye strain
    - API: when does sunrise, when does sunset, is the system time within those hours
    - Night mode is for all the time or just
