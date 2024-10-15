@@ -17,8 +17,14 @@ float musicButtonDIV_X, musicButtonDIV_Y, musicButtonDIV_Width, musicButtonDIV_H
 float musicButtonSquareX, musicButtonSquareY, musicButtonSquareWidth, musicButtonSquareHeight;
 float stopX, stopY, stopWidth, stopHeight;
 //
-color purple=#DB05FF, yellow=#E9FF00;
+color purple=#DB05FF, yellow=#E9FF00, white=#FFFFFF, black=#000000, green=#00FF00;
+color dayForeground, dayHoverover, dayBackground;
+color darkForeground, darkHoverover, darkBackground;
+color nightForeground, nightHoverover, nightBackground;
+color appColorForeground, appColorHoverover, appColorBackground;
 color stopButtonHoverOver;
+//
+Boolean colorDayMode=true, colorDarkMode=false, colorNightMode=false;
 //
 void setup()
 {
@@ -103,6 +109,9 @@ void setup()
   //rect() based on variables; variables change with program (introduces parameters of a function and TABS)
   //rect( X, Y, Width, Height );
   //rect( musicButtonDIV_X, musicButtonDIV_Y, musicButtonDIV_Width, musicButtonDIV_Height );
+  //
+  if () {} else if () {} else {}
+  //
 } //End setup
 //
 void draw() {
