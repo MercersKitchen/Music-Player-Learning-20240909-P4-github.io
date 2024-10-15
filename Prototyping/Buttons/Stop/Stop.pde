@@ -24,7 +24,7 @@ color nightForeground=green, nightHoverover=yellow, nightBackground=black;
 color appColorForeground, appColorHoverover, appColorBackground;
 color stopButtonHoverOver;
 //
-Boolean colorDarkMode=true; //Preference: true or false
+Boolean colorDarkMode=true; //Preference: true or false //Future: Build Button for Dark Mode Preference
 //
 void setup()
 {
@@ -110,28 +110,33 @@ void setup()
   //rect( X, Y, Width, Height );
   //rect( musicButtonDIV_X, musicButtonDIV_Y, musicButtonDIV_Width, musicButtonDIV_Height );
   //
-  if ( hour()<=7 || hour()>=17 ) {
+  println(colorDarkMode);
+  if ( colorDarkMode==false && ( hour()<=7 || hour()>=17 ) ) { //Testing: change 5PM to earlier time, shortcut colorNightMode==true
     //Night
     appColorForeground = nightForeground;
     appColorHoverover = nightHoverover;
     appColorBackground = nightBackground;
-  } else if ( colorDarkMode==false && hour()>7 || hour()<17 ) {
+    println("here1");
+  } else if ( colorDarkMode==false && ( hour()>7 || hour()<17 ) ) {
     //Day
     appColorForeground = dayForeground;
     appColorHoverover = dayHoverover;
     appColorBackground = dayBackground;
+    println("here2");
   } else {
     //Dark Mode 
     appColorForeground = darkForeground;
     appColorHoverover = darkHoverover;
     appColorBackground = darkBackground;
+    println("here3");
   }
   //
 } //End setup
 //
 void draw() {
-  background(0); //Gray Scale: 0-255, full BLUE Colour
+  background(appColorBackground); //Gray Scale: 0-255, full BLUE Colour
   //
+  //fill() is default
   rect( musicButtonSquareX, musicButtonSquareY, musicButtonSquareWidth, musicButtonSquareHeight );
   //
   /* Note: 3 types of colour, in pairs for hoverover
@@ -155,7 +160,7 @@ void draw() {
   noStroke(); //Colour
   //
   rect( stopX, stopY, stopWidth, stopHeight ); //(X, Y, width, height, roundedEdge1, roundedEdge2, roundedEdge3, roundedEdge4, )
-  fill(255); //noFill();
+  fill(255); //noFill(); //White in Gray Scale
   stroke(1); //Reset default
   //
   //Music Buttons Interactions: cascading IFs can become AND Statements
