@@ -62,6 +62,13 @@ void setup()
   stopHeight = musicButtonSquareHeight*1/2;
   stopX = musicButtonSquareX + musicButtonSquareWidth*1/4;
   stopY = musicButtonSquareY + musicButtonSquareHeight*1/4;
+  playButton1X = musicButtonSquareX + musicButtonSquareWidth*1/4;
+  playButton1Y  = musicButtonSquareY + musicButtonSquareHeight*1/4;
+  playButton2X = musicButtonSquareX + musicButtonSquareWidth*3/4;
+  playButton2Y = musicButtonSquareY + musicButtonSquareHeight*1/2;
+  playButton3X = musicButtonSquareX + musicButtonSquareWidth*1/4;
+  playButton3Y = musicButtonSquareY + musicButtonSquareHeight*3/4;
+  //playButton1X, playButton1Y, playButton2X, playButton2Y, playButton3X, playButton3Y
   //
   minim = new Minim(this); //load from data directory, loadFile should also load from project folder
   //
@@ -159,7 +166,7 @@ void draw() {
   fill(stopButtonHoverOver);
   noStroke(); //Colour
   //
-  rect( stopX, stopY, stopWidth, stopHeight ); //(X, Y, width, height, roundedEdge1, roundedEdge2, roundedEdge3, roundedEdge4, )
+  triangle(playButton1X, playButton1Y, playButton2X, playButton2Y, playButton3X, playButton3Y);
   fill(255); //noFill(); //White in Gray Scale
   stroke(1); //Reset default
   //

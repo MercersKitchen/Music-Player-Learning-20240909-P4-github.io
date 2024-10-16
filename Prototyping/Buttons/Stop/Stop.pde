@@ -24,7 +24,7 @@ color nightForeground=green, nightHoverover=yellow, nightBackground=black;
 color appColorForeground, appColorHoverover, appColorBackground;
 color stopButtonHoverOver;
 //
-Boolean colorDarkMode=true; //Preference: true or false //Future: Build Button for Dark Mode Preference
+Boolean colorDarkMode=false; //Preference: true or false //Future: Build Button for Dark Mode Preference
 //
 void setup()
 {
