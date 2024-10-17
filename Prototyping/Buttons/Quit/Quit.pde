@@ -67,7 +67,7 @@ void setup()
   quitButtonX1 = stopX;
   quitButtonY1 = stopY;
   quitButtonX2 = stopX+stopWidth;
-  quitButtonY2 = stopX+stopHeight;
+  quitButtonY2 = stopY+stopHeight;
   /*
   quitButtonX3 = ;
   quitButtonY3 = ; 
@@ -170,6 +170,13 @@ void draw() {
   }
   fill(stopButtonHoverOver);
   //stroke(); //Colour
+  //
+  fill(stopButtonHoverOver);
+  noStroke(); //Colour
+  rect( stopX, stopY, stopWidth, stopHeight ); //(X, Y, width, height, roundedEdge1, roundedEdge2, roundedEdge3, roundedEdge4, )
+  fill(255); //noFill(); //White in Gray Scale
+  stroke(1); //Reset default
+  //
   //
   strokeWeight(quitThicknessLine);
   line( quitButtonX1, quitButtonY1, quitButtonX2, quitButtonY2 );
