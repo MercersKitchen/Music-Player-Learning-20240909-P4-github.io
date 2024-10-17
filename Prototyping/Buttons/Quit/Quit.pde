@@ -16,6 +16,7 @@ int appWidth, appHeight;
 float musicButtonDIV_X, musicButtonDIV_Y, musicButtonDIV_Width, musicButtonDIV_Height;
 float musicButtonSquareX, musicButtonSquareY, musicButtonSquareWidth, musicButtonSquareHeight;
 float stopX, stopY, stopWidth, stopHeight;
+float quitThicknessLine, quitButtonX1, quitButtonY1, quitButtonX2, quitButtonY2;
 //
 color purple=#DB05FF, yellow=#E9FF00, blue=#037EFF, white=#FFFFFF, black=#000000, green=#00FF00;
 color dayForeground=purple, dayHoverover=blue, dayBackground=white;
@@ -62,6 +63,17 @@ void setup()
   stopHeight = musicButtonSquareHeight*1/2;
   stopX = musicButtonSquareX + musicButtonSquareWidth*1/4;
   stopY = musicButtonSquareY + musicButtonSquareHeight*1/4;
+  quitThicknessLine = ( musicButtonSquareWidth / musicButtonSquareWidth ) + musicButtonSquareWidth*1/4*1/2;
+  quitButtonX1 = stopX;
+  quitButtonY1 = stopY;
+  quitButtonX2 = stopX+stopWidth;
+  quitButtonY2 = stopX+stopHeight;
+  /*
+  quitButtonX3 = ;
+  quitButtonY3 = ; 
+  quitButtonX4 = ;
+  quitButtonY4 = ;
+  */
   //
   minim = new Minim(this); //load from data directory, loadFile should also load from project folder
   //
@@ -157,12 +169,13 @@ void draw() {
     stopButtonHoverOver = appColorForeground; // See SetUp: Single Line IFs for Day, Dark, and Night Booleans
   }
   fill(stopButtonHoverOver);
-  noStroke(); //Colour
+  //stroke(); //Colour
   //
-  line();
-  line();
+  strokeWeight(quitThicknessLine);
+  line( quitButtonX1, quitButtonY1, quitButtonX2, quitButtonY2 );
+  //line( quitButtonX3, quitButtonY3, quitButtonX4, quitButtonY4 );
   fill(255); //noFill(); //White in Gray Scale
-  stroke(1); //Reset default
+  //noStroke(1); //Reset default
   //
   //Music Buttons Interactions: cascading IFs can become AND Statements
   //Note: keypressed must have click on screen
