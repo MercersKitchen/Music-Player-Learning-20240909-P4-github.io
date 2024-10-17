@@ -159,7 +159,8 @@ void draw() {
   fill(stopButtonHoverOver);
   noStroke(); //Colour
   //
-  rect( stopX, stopY, stopWidth, stopHeight ); //(X, Y, width, height, roundedEdge1, roundedEdge2, roundedEdge3, roundedEdge4, )
+  line();
+  line();
   fill(255); //noFill(); //White in Gray Scale
   stroke(1); //Reset default
   //
