@@ -222,7 +222,8 @@ void keyPressed() {
     //Known ERROR: once song plays, MUTE acts like it doesn't work
     if ( song[currentSong].isMuted() ) {
       //ERROR: song might not be playing
-      //CATCH: ask .isPlaying() or !.isPlaying()song[currentSong].unmute();
+      //CATCH: ask .isPlaying() or !.isPlaying()
+      song[currentSong].unmute();
     } else {
       //Possible ERROR: Might rewind the song
       song[currentSong].mute();
@@ -236,7 +237,8 @@ void keyPressed() {
       song[currentSong].play();
     }
   }
-  //if ( key==CODED || keyCode=='ESC' ) ; // QUIT
+  if ( key==CODED || keyCode==ESC ) exit(); // QUIT //UP
+  if ( key=='Q' || key=='q' ) exit(); // QUIT
   //
   //if ( key=='' || key=='' ) ; // NEXT //See .txt for starter hint
   //if ( key=='' || key=='' ) ; // Previous //Students to finish
