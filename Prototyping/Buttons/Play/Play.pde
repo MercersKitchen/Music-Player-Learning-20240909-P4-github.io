@@ -132,7 +132,7 @@ void setup()
     appColorBackground = dayBackground;
     println("here2");
   } else {
-    //Dark Mode 
+    //Dark Mode
     appColorForeground = darkForeground;
     appColorHoverover = darkHoverover;
     appColorBackground = darkBackground;
@@ -194,9 +194,9 @@ void keyPressed() {
    Note: CAP Lock with ||
    if ( key==? || key==? ) ;
    */
-  //if ( key=='P' || key=='p' ) song[currentSong].play(); //Simple Play, no double tap possible
+  if ( key=='P' || key=='p' ) song[currentSong].play(); //Simple Play, no double tap possible
   //
-  if ( key=='P' || key=='p' ) song[currentSong].loop(0); //Simple Play, double tap possible
+  //if ( key=='P' || key=='p' ) song[currentSong].loop(0); //Simple Play, double tap possible
   /* Note: double tap is automatic rewind, no pause
    Symbol is two triangles
    This changes what the button might become after it is pressed
@@ -210,6 +210,38 @@ void keyPressed() {
       song[currentSong].rewind(); //double tap
     }
   }
+  if ( key=='L' || key=='l' ) song[currentSong].loop(1); // Loop ONCE: Plays, then plays again, then stops & rewinds
+  if ( key=='K' || key=='k' ) song[currentSong].loop(); // Loop Infinitely //Parameter: BLANK or -1
+  if ( key=='F' || key=='f' ) song[currentSong].skip( 10000 ); // Fast Forward, Rewind, & Play Again //Parameter: milliseconds
+  if ( key=='R' || key=='r' ) song[currentSong].skip( -10000 ); // Fast Reverse & Play //Parameter: negative numbers
+  if ( key=='M' || key=='m' ) { // MUTE
+    //
+    //MUTE Behaviour: stops electricty to speakers, does not stop file
+    //NOTE: MUTE has NO built-in PUASE button, NO built-in rewind button
+    //ERROR: if song near end of file, user will not know song is at the end
+    //Known ERROR: once song plays, MUTE acts like it doesn't work
+    if ( song[currentSong].isMuted() ) {
+      //ERROR: song might not be playing
+      //CATCH: ask .isPlaying() or !.isPlaying()song[currentSong].unmute();
+    } else {
+      //Possible ERROR: Might rewind the song
+      song[currentSong].mute();
+    }
+  }
+  if ( key=='O' || key=='o' ) { // Pause
+    //
+    if ( song[currentSong].isPlaying() ) {
+      song[currentSong].pause();
+    } else {
+      song[currentSong].play();
+    }
+  }
+  //if ( key==CODED || keyCode=='ESC' ) ; // QUIT
+  //
+  //if ( key=='' || key=='' ) ; // NEXT //See .txt for starter hint
+  //if ( key=='' || key=='' ) ; // Previous //Students to finish
+  //if ( key=='' || key=='' ) ; // Shuffle - PLAY (Random)
+  //if ( key=='' || key=='' ) ; // Play-Pause-STOP
 } //End keyPressed
 //
 // End Main Program
