@@ -1,0 +1,16 @@
+
+Progressions
+- create the IF statement when the computer is NOT playing the song
+
+
+if () {} 
+if () {} else {}
+if () {} else if () {} else {}
+song[currentSong].isPlaying()
+song[currentSong].play()
+song[currentSong].pause()
+song[currentSong].rewind()
+currentSong == numberOfSongs + 1
+currentSong == numberOfSongs - 1
+currentSong = numberOfSongs - numberOfSongs  // OR currentSong = currentSong - currentSong
+currentSong += 1
