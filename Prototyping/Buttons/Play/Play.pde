@@ -241,7 +241,7 @@ void keyPressed() {
       song[currentSong].pause();
       song[currentSong].rewind();
       //
-      if ( currentSong==7 ) {
+      if ( currentSong==numberOfSongs-1 ) {
         currentSong = 0;
       } else {
         currentSong++;
@@ -251,7 +251,7 @@ void keyPressed() {
       //
       song[currentSong].rewind();
       //
-      if ( currentSong==7 ) {
+      if ( currentSong==numberOfSongs-1 ) {
         currentSong = 0;
       } else {
         currentSong++;
@@ -263,6 +263,9 @@ void keyPressed() {
   //if ( key=='P' || key=='p' ) ; // Previous //Students to finish
   //
   //if ( key=='S' || key=='s' ) ; // Shuffle - PLAY (Random)
+  //Note: will randomize the currentSong number
+  //Caution: random() is used very often
+  //Question: how does truncating decimals affect returning random() floats
   /*
   if ( key=='' || key=='' ) ; // Play-Pause-STOP //Advanced, beyond single buttons
    - need to have basic GUI complete first
