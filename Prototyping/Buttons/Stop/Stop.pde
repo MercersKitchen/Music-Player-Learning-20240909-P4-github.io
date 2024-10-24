@@ -116,19 +116,16 @@ void setup()
     appColorForeground = nightForeground;
     appColorHoverover = nightHoverover;
     appColorBackground = nightBackground;
-    println("here1");
   } else if ( colorDarkMode==false && ( hour()>7 || hour()<17 ) ) {
     //Day
     appColorForeground = dayForeground;
     appColorHoverover = dayHoverover;
     appColorBackground = dayBackground;
-    println("here2");
   } else {
     //Dark Mode 
     appColorForeground = darkForeground;
     appColorHoverover = darkHoverover;
     appColorBackground = darkBackground;
-    println("here3");
   }
   //
 } //End setup
