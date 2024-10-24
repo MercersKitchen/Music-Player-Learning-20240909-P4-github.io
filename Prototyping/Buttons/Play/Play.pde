@@ -69,7 +69,6 @@ void setup()
   playButton2Y = musicButtonSquareY + musicButtonSquareHeight*1/2;
   playButton3X = musicButtonSquareX + musicButtonSquareWidth*1/4;
   playButton3Y = musicButtonSquareY + musicButtonSquareHeight*3/4;
-  //playButton1X, playButton1Y, playButton2X, playButton2Y, playButton3X, playButton3Y
   //
   minim = new Minim(this); //load from data directory, loadFile should also load from project folder
   //
@@ -124,19 +123,16 @@ void setup()
     appColorForeground = nightForeground;
     appColorHoverover = nightHoverover;
     appColorBackground = nightBackground;
-    println("here1");
   } else if ( colorDarkMode==false && ( hour()>7 || hour()<17 ) ) {
     //Day
     appColorForeground = dayForeground;
     appColorHoverover = dayHoverover;
     appColorBackground = dayBackground;
-    println("here2");
   } else {
     //Dark Mode
     appColorForeground = darkForeground;
     appColorHoverover = darkHoverover;
     appColorBackground = darkBackground;
-    println("here3");
   }
   //
 } //End setup
@@ -250,11 +246,9 @@ void keyPressed() {
       } else {
         currentSong++;
       }
-      println("The current song is", currentSong);
       song[currentSong].play();
     } else {
       //
-      println("The current song is", currentSong);
       song[currentSong].rewind();
       //
       if ( currentSong==7 ) {
@@ -262,14 +256,18 @@ void keyPressed() {
       } else {
         currentSong++;
       }
-      println("The current song is", currentSong);
+      // NEXT will not automatically play the song
       //song[currentSong].play();
     }
   }
-  //if ( key=='' || key=='' ) ; // Previous //Students to finish
+  //if ( key=='P' || key=='p' ) ; // Previous //Students to finish
   //
-  //if ( key=='' || key=='' ) ; // Shuffle - PLAY (Random)
-  //if ( key=='' || key=='' ) ; // Play-Pause-STOP
+  //if ( key=='S' || key=='s' ) ; // Shuffle - PLAY (Random)
+  /*
+  if ( key=='' || key=='' ) ; // Play-Pause-STOP //Advanced, beyond single buttons
+   - need to have basic GUI complete first
+   */
+  //
 } //End keyPressed
 //
 // End Main Program
