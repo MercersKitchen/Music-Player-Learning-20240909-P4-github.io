@@ -24,7 +24,7 @@ void setup()
   musicButtonDIV_Width = appWidth*1/2;
   musicButtonDIV_Height = appHeight*1/2;
   musicButtonDIV_X = musicButtonDIV_Width - musicButtonDIV_Width*1/2;
-  musicButtonDIV_Y = musicButtonDIV_Height- musicButtonDIV_Height*1/2;
+  musicButtonDIV_Y = musicButtonDIV_Height - musicButtonDIV_Height*1/2;
   //Use if statement to change, introduce ternary operator
   //
   //Population (Variables)
