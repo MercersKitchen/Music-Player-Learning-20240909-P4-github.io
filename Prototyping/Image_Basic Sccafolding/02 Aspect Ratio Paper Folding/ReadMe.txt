@@ -47,6 +47,8 @@ A small or big image will fit in a rect()
 - the smaller dimension will not look weird, =1
 - the larger dimesion will change aspect ration
 
+CAUTION: will the image fit inside it's frame
+
 Do a couple of examples, then write an algorithm in groups on a 11x17
 - will an 11x8.5 fit in given rectangles
 
@@ -55,4 +57,4 @@ Students need to write out algorithm for Aspect Ration
 - What is being compared? (Create BLOCKS for variables)
 - What are they trying to do? (What will result tell us?)
 
-CAUTION: will the image fit inside it's frame
+---
