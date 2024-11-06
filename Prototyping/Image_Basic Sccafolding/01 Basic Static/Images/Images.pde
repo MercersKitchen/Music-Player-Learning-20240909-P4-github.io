@@ -11,7 +11,7 @@ backgroundImageX = appWidth*0;
 backgroundImageY = appHeight*0;
 backgroundImageWidth = appWidth-1;
 backgroundImageHeight = appHeight-1;
-picBackground = loadImage("../../../imagesUsed/Landscape & Square Images/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
+picBackground = loadImage("../../../../Images/SoccerBall.jpg");
 //
 //DIVs
 rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
