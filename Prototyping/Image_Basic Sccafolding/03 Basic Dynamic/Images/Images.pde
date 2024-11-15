@@ -1,7 +1,6 @@
 //Global Variables
 int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
-float bikeX, bikeY, bikeWidth, bikeHeight;
 PImage picBackground;
 //
 void setup() {
@@ -15,14 +14,14 @@ void setup() {
   backgroundImageWidth = appWidth-1;
   backgroundImageHeight = appHeight-1;
   picBackground = loadImage("../../../../Images/Square/SoccerBall.jpg");
-  bikeX = appWidth;
-  bikeY = appHeight;
-  bikeWidth = appWidth;
-  bikeHeight = appHeight;
+  bikeX = ;
+  bikeY = ;
+  bikeWidth = ;
+  bikeHeight = ;
   //
   //DIVs
   rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
-  rect( bikeX, bikeY, bikeWidth, bikeHeight );
+  rect(  );
 }
 //
 void draw() {
