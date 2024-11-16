@@ -4,8 +4,10 @@ float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageH
 float bikeX, bikeY, bikeWidth, bikeHeight;
 PImage picBackground, picBike;
 int picBikeWidth, picBikeHeight;
-float bikeX_Changed, bikeY_Changed;
 float picBikeWidthChanged, picBikeHeightChanged, biggerSide, smallerSide, ratio;
+float bikeX_Changed, bikeY_Changed;
+Boolean centeredVertical=true, down=false; //default is image at top
+//Left, Centered, Right is for landscape images
 //
 void setup() {
   size( 500, 700 ); //Landscape
@@ -31,16 +33,21 @@ void setup() {
   smallerSide = ( picBikeHeight < picBikeWidth ) ? picBikeHeight : picBikeWidth ;
   ratio = biggerSide / smallerSide; //Ratio bigger than one, divide means smaller side, multiply means larger side
   println( "Big Side:", biggerSide, "\tSmall Side:", smallerSide, "\tRatio:", ratio );
-  /* Algorithm
-  - Establish Landscape or Portrait of DIV
-  - Note: I always fill smaller side of DIV, then calculate larger side of DIV
-  - Hardcode if ratio will be >1 or <1 ... influences * or /
-  - In the image, decide if calculating the larger side or the smaller side
-  */
+  //Establish Landscape or Portrait
   if ( bikeWidth > bikeHeight ) { //DIV Landscape, find larger side
-    //
+    picBikeHeightChanged = bikeHeight;
+    picBikeWidthChanged = ( picBikeWidth > picBikeHeight ) ? picBikeWidthChanged / ratio : picBikeWidthChanged * ratio;
+    println( "Inside If-true:", picBikeWidthChanged );
   } else { //DIV Portrait
-    //
+    picBikeWidthChanged = bikeWidth;
+    //Calculate a bigger side or a smaller side
+    picBikeHeightChanged = ( picBikeWidth > picBikeHeight ) ? picBikeWidthChanged / ratio : picBikeWidthChanged * ratio;
+    if ( centeredVertical==true ) {
+      float extraSpace = bikeHeight - picBikeHeightChanged;
+      println(extraSpace);
+      bikeY_Changed = bikeY + extraSpace*1/2;
+    }
+    println( "Inside If-false:", picBikeHeightChanged );
   }
   println( "Changed Width:", picBikeWidthChanged, "\tChanged Height:", picBikeHeightChanged );
   //

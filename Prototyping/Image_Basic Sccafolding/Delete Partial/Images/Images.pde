@@ -4,7 +4,6 @@ float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageH
 float bikeX, bikeY, bikeWidth, bikeHeight;
 PImage picBackground, picBike;
 int picBikeWidth, picBikeHeight;
-float bikeX_Changed, bikeY_Changed;
 float picBikeWidthChanged, picBikeHeightChanged, biggerSide, smallerSide, ratio;
 //
 void setup() {
@@ -18,8 +17,8 @@ void setup() {
   backgroundImageWidth = appWidth-1;
   backgroundImageHeight = appHeight-1;
   picBackground = loadImage("../../../../Images/Square/SoccerBall.jpg");
-  bikeX_Changed = bikeX = appWidth * 1/4;
-  bikeY_Changed = bikeY = appHeight * 1/4;
+  bikeX = appWidth * 1/4;
+  bikeY = appHeight * 1/4;
   bikeWidth = appWidth * 1/2;
   bikeHeight = appHeight * 1/2;
   picBike = loadImage("../../../../Images/Landscape/bike.jpg");
@@ -38,9 +37,14 @@ void setup() {
   - In the image, decide if calculating the larger side or the smaller side
   */
   if ( bikeWidth > bikeHeight ) { //DIV Landscape, find larger side
-    //
+    picBikeHeightChanged = bikeHeight;
+    picBikeWidthChanged = ( picBikeWidth > picBikeHeight ) ? picBikeWidthChanged / ratio : picBikeWidthChanged * ratio;
+    println( "Inside If-true:", picBikeWidthChanged );
   } else { //DIV Portrait
-    //
+    picBikeWidthChanged = bikeWidth;
+    //Calculate a bigger side or a smaller side
+    picBikeHeightChanged = ( picBikeWidth > picBikeHeight ) ? picBikeWidthChanged / ratio : picBikeWidthChanged * ratio;
+    println( "Inside If-false:", picBikeHeightChanged );
   }
   println( "Changed Width:", picBikeWidthChanged, "\tChanged Height:", picBikeHeightChanged );
   //
@@ -52,7 +56,7 @@ void setup() {
 void draw() {
   //Draw Image One Time, for testing
   //image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
-  image( picBike, bikeX_Changed, bikeY_Changed, picBikeWidthChanged, picBikeHeightChanged );
+  image( picBike, bikeX, bikeY, picBikeWidthChanged, picBikeHeightChanged );
 }
 //
 void mousePressed() {
