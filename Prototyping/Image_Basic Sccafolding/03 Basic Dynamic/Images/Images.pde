@@ -38,9 +38,13 @@ void setup() {
   - In the image, decide if calculating the larger side or the smaller side
   */
   if ( bikeWidth > bikeHeight ) { //DIV Landscape, find larger side
-    //
+    picBikeHeightChanged = bikeHeight;
+    picBikeWidthChanged = ( picBikeWidth > picBikeHeight ) ? picBikeWidthChanged / ratio : picBikeWidthChanged * ratio;
+    println( "Inside If-true:", picBikeWidthChanged );
   } else { //DIV Portrait
-    //
+    picBikeWidthChanged = bikeWidth;
+    picBikeHeightChanged = ( picBikeWidth > picBikeHeight ) ? picBikeWidthChanged / ratio : picBikeWidthChanged * ratio;
+    println( "Inside If-false:", picBikeHeightChanged );
   }
   println( "Changed Width:", picBikeWidthChanged, "\tChanged Height:", picBikeHeightChanged );
   //
@@ -52,7 +56,7 @@ void setup() {
 void draw() {
   //Draw Image One Time, for testing
   //image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
-  image( picBike, bikeX_Changed, bikeY_Changed, picBikeWidthChanged, picBikeHeightChanged );
+  //image( picBike, bikeX_Changed, bikeY_Changed, picBikeWidthChanged, picBikeHeightChanged );
 }
 //
 void mousePressed() {
