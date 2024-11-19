@@ -1,2 +1,0 @@
-
-Portrait in Landscape
