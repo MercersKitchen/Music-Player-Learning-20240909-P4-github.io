@@ -4,7 +4,10 @@ float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageH
 float bikeX, bikeY, bikeWidth, bikeHeight;
 PImage picBackground, picBike;
 int picBikeWidth, picBikeHeight;
-float picBikeWidthChanged, picBikeHeightChanged, biggerSide, smallerSide, ratio;
+float bikeX_Changed, bikeY_Changed;
+float picBikeWidthChanged, picBikeHeightChanged;
+//
+Boolean nightMode=false; //Note: clock could turn on automatically, see intermediate algorithm
 //
 void setup() {
   size( 500, 700 ); //Landscape
@@ -16,19 +19,19 @@ void setup() {
   backgroundImageY = appHeight*0;
   backgroundImageWidth = appWidth-1;
   backgroundImageHeight = appHeight-1;
-  picBackground = loadImage("../../../../Images/Square/SoccerBall.jpg");
-  bikeX = appWidth * 1/4;
-  bikeY = appHeight * 1/4;
+  picBackground = loadImage("../../../../../Images/Square/SoccerBall.jpg");
+  bikeX_Changed = bikeX = appWidth * 1/4;
+  bikeY_Changed = bikeY = appHeight * 1/4;
   bikeWidth = appWidth * 1/2;
   bikeHeight = appHeight * 1/2;
-  picBike = loadImage("../../../../Images/Landscape/bike.jpg");
+  picBike = loadImage("../../../../../Images/Landscape/bike.jpg");
   picBikeWidthChanged = picBikeWidth = 860;
   picBikeHeightChanged = picBikeHeight = 529;
   //
   //Image Compression
-  biggerSide = ( picBikeWidth > picBikeHeight ) ? picBikeWidth : picBikeHeight ;
-  smallerSide = ( picBikeHeight < picBikeWidth ) ? picBikeHeight : picBikeWidth ;
-  ratio = biggerSide / smallerSide; //Ratio bigger than one, divide means smaller side, multiply means larger side
+  float biggerSide = ( picBikeWidth > picBikeHeight ) ? picBikeWidth : picBikeHeight ;
+  float smallerSide = ( picBikeHeight < picBikeWidth ) ? picBikeHeight : picBikeWidth ;
+  float ratio = biggerSide / smallerSide; //Ratio bigger than one, divide means smaller side, multiply means larger side
   println( "Big Side:", biggerSide, "\tSmall Side:", smallerSide, "\tRatio:", ratio );
   /* Algorithm
   - Establish Landscape or Portrait of DIV
@@ -42,7 +45,6 @@ void setup() {
     println( "Inside If-true:", picBikeWidthChanged );
   } else { //DIV Portrait
     picBikeWidthChanged = bikeWidth;
-    //Calculate a bigger side or a smaller side
     picBikeHeightChanged = ( picBikeWidth > picBikeHeight ) ? picBikeWidthChanged / ratio : picBikeWidthChanged * ratio;
     println( "Inside If-false:", picBikeHeightChanged );
   }
@@ -54,15 +56,34 @@ void setup() {
 }
 //
 void draw() {
-  //Draw Image One Time, for testing
-  //image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
-  image( picBike, bikeX, bikeY, picBikeWidthChanged, picBikeHeightChanged );
+  /* Image Formating: night mode
+  Single Line IF: if ( nightmode==true ) tint ( 64, 64, 40 ); //Gray Scale: 1/2 tint (i.e 128/256=1/2)
+  */
+  if ( nightMode==true ) {
+    tint ( 64, 64, 40 ); //RGB
+    println(nightMode); //Debugging KeyPressed
+  } else {
+    noTint(); //See Processing DOC
+    println(nightMode); //Debugging KeyPressed
+  }
+  //
+  image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
+  image( picBike, bikeX_Changed, bikeY_Changed, picBikeWidthChanged, picBikeHeightChanged );
 }
 //
 void mousePressed() {
 }
 //
 void keyPressed() {
+  //
+  if ( key=='n' || key=='N' ) { //Nightmode, basic control is Boolean
+    if ( nightMode==true ) {
+      nightMode = false;
+    } else {
+      nightMode = true;
+    }
+  }
+  //
 }
 //
 //End MAIN
