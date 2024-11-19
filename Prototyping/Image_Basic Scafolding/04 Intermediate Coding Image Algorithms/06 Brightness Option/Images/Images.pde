@@ -77,6 +77,8 @@ void draw() {
    - NOTE: NOT OS or Display Brightness, Processing Birghtness
    */
   if ( nightMode==true ) {
+    //If Night Mode TRUE, overwrites brightness in this algorithm
+    //CUATION: brightness uses BLUE, must consider more developed algorithm
     tint ( 64, 64, 40 ); //RGB
     //println(nightMode); //Debugging KeyPressed
   } else if ( nightMode==false && brightnessControl==true ) {
@@ -87,8 +89,9 @@ void draw() {
     } else {
       //Empty ELSE
     }
-    tint (255, brightnessNumber);
+    tint (255, brightnessNumber); //will only execute if Night Mode FALSE and Brightness TURE
   } else {
+    //EXecutes if Night Mode false only, redundant if Brightness is FALSE
     noTint(); //See Processing DOC
     //println(nightMode); //Debugging KeyPressed
   }
