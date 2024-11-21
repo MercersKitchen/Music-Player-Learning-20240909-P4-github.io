@@ -1,5 +1,5 @@
 /* Static Text
- - Text Aspect Ratio
+ - Testing for Aspect Ratio
  - introduce single and mutliple executed code
  - activity: do another rectangle with text in it
  - copy and paste to dynamic program
@@ -33,6 +33,6 @@ footerY = appHeight*8/10;
 footerWidth = titleWidth;
 footerHeight = titleHeight;
 //DIVs
-rect( titleX, titleY, titleWidth, titleHeight );
-rect( superCoolPhraseX, superCoolPhraseY, superCoolPhraseWidth, superCoolPhraseHeight );
-rect( footerX, footerY, footerWidth, footerHeight );
+rect( titleX, titleY, titleWidth, titleHeight ); //Title Font
+rect( superCoolPhraseX, superCoolPhraseY, superCoolPhraseWidth, superCoolPhraseHeight ); // Testing Aspect Ratio of Fonts
+rect( footerX, footerY, footerWidth, footerHeight ); //Different Font
