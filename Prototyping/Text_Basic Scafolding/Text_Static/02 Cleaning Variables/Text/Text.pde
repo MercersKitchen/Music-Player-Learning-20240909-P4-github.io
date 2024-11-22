@@ -1,4 +1,4 @@
-/* Static Text
+/* Static Text: Cleaning Variables, no change in CANVAS
  - Testing for Aspect Ratio
  - introduce single and mutliple executed code
  - activity: do another rectangle with text in it
@@ -20,18 +20,12 @@ appHeight = height;
 - Could be 100s or percent
 - Able to use decimals to dial in the values
 */
-titleX = appWidth*1/10;
+footerX = superCoolPhraseX = titleX = appWidth*1/10;
+footerWidth = superCoolPhraseWidth = titleWidth = appWidth*8/10;
+footerHeight = superCoolPhraseHeight = titleHeight = appHeight*1/10;
 titleY = appHeight*1/10;
-titleWidth = appWidth*8/10;
-titleHeight = appHeight*1/10;
-superCoolPhraseX = titleX; //Best Practice: change on formula
 superCoolPhraseY = appHeight*4.5/10; //Ratio done last. How is this Centered Vertically?
-superCoolPhraseWidth = titleWidth; //Best Practice
-superCoolPhraseHeight = titleHeight; //Best Practice
-footerX = titleX; //Best Practice
 footerY = appHeight*8/10;
-footerWidth = titleWidth; //Best Practice
-footerHeight = titleHeight; //Best Practice
 //DIVs
 rect( titleX, titleY, titleWidth, titleHeight ); //Title Font
 rect( superCoolPhraseX, superCoolPhraseY, superCoolPhraseWidth, superCoolPhraseHeight ); // Testing Aspect Ratio of Fonts

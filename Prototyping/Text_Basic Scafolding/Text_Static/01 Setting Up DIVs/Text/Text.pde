@@ -1,4 +1,4 @@
-/* Static Text
+/* Static Text: writing DIVs, variable required for buttons
  - Testing for Aspect Ratio
  - introduce single and mutliple executed code
  - activity: do another rectangle with text in it
