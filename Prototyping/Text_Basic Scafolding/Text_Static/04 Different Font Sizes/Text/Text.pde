@@ -54,10 +54,12 @@ rect( footerX, footerY, footerWidth, footerHeight ); //Different Font
 fill(purple); //Ink, hexidecimal copied from Color Selector
 textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
 //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
-size = 43; //Change the number until it fits
+size = 47; //Change the number until it fits
 textFont( titleFont, size ); 
 text( title, titleX, titleY, titleWidth, titleHeight );
+size = 43; //Change the number until it fits
 textFont( footerFont, size ); 
 text( footer, footerX, footerY, footerWidth, footerHeight );
+size = 83; //Change the number until it fits
 textFont( phraseFont, size ); 
 text( phrase, superCoolPhraseX, superCoolPhraseY, superCoolPhraseWidth, superCoolPhraseHeight );

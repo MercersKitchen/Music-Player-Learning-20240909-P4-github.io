@@ -1,8 +1,6 @@
-/* Static Text
+/* Dynamic Text
  - Testing for Aspect Ratio
- - introduce single and mutliple executed code
- - activity: do another rectangle with text in it
- - copy and paste to dynamic program
+ - change the text in middle rect()
  */
 // Global Variables
 int appWidth, appHeight;
@@ -10,10 +8,12 @@ float titleX, titleY, titleWidth, titleHeight;
 float superCoolPhraseX, superCoolPhraseY, superCoolPhraseWidth, superCoolPhraseHeight;
 float footerX, footerY, footerWidth, footerHeight;
 PFont titleFont, footerFont, phraseFont;
-color purple=#2C08FF, white=#FFFFFF, resetDefaultInk=white; //Not Night Mode Friendly
+color ink, purple=#2C08FF, white=#FFFFFF, resetDefaultInk=white; //Not Night Mode Friendly
 int size;
-String title = "How do I write text?", footer="This is at the bottom", phrase="ORA";
+String title = "How do I write text?", footer="This is at the bottom.", phrase="ORA-Wahoo";
 //
+void setup() 
+{
 //Display
 size( 500, 700 ); //Portrait CANVAS
 appWidth = width;
@@ -49,15 +49,29 @@ footerHeight = titleHeight; //Best Practice
 rect( titleX, titleY, titleWidth, titleHeight ); //Title Font
 rect( superCoolPhraseX, superCoolPhraseY, superCoolPhraseWidth, superCoolPhraseHeight ); // Testing Aspect Ratio of Fonts
 rect( footerX, footerY, footerWidth, footerHeight ); //Different Font
+} //End setup
 //
+void draw()
+{
 //Drawing Text
-fill(purple); //Ink, hexidecimal copied from Color Selector
 textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
 //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
-size = 50; //Change the number until it fits
+fill(ink);
+size = 47; //Change the number until it fits
 textFont( titleFont, size ); 
 text( title, titleX, titleY, titleWidth, titleHeight );
+fill(ink);
+size = 43; //Change the number until it fits
 textFont( footerFont, size ); 
 text( footer, footerX, footerY, footerWidth, footerHeight );
+fill(ink);
+size = 83; //Change the number until it fits
 textFont( phraseFont, size ); 
 text( phrase, superCoolPhraseX, superCoolPhraseY, superCoolPhraseWidth, superCoolPhraseHeight );
+} //End draw
+//
+void mousePressed() {} //End mousePressed
+//
+void keyPressed() {} //End keyPressed
+//
+//End MAIN
