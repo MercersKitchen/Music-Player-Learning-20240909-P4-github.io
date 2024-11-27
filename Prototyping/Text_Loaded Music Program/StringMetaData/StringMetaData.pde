@@ -13,6 +13,16 @@ float metaDataX1, metaDataY1, metaDataWidth1, metaDataHeight1;
 float metaDataX2, metaDataY2, metaDataWidth2, metaDataHeight2;
 float metaDataX3, metaDataY3, metaDataWidth3, metaDataHeight3;
 //
+Minim minim;
+int numberOfSongs = 8;
+AudioPlayer[] playList = new AudioPlayer[numberOfSongs];
+AudioMetaData[] playListTitleMetaData = new AudioMetaData[numberOfSongs];
+AudioMetaData[] playListPostionMetaData = new AudioMetaData[numberOfSongs]; //might change
+AudioMetaData[] playListTimeRemainingMetaData = new AudioMetaData[numberOfSongs]; //might change
+AudioMetaData[] playListTotalTimeMetaData = new AudioMetaData[numberOfSongs]; //might change
+int currentSong = numberOfSongs - numberOfSongs;
+//Review if more meta data needed
+//
 void setup()
 {
   fullScreen();
