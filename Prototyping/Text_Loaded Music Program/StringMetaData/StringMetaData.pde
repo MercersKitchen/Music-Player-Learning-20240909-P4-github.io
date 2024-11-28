@@ -29,6 +29,57 @@ void setup()
   appWidth = displayWidth;
   appHeight = displayHeight;
   //
+  // Load Music
+  String musicPathway = "Music/";
+  String mp3FileName = ".mp3";
+  //Alphebetical order, same as OS ordering files
+  String beatYourCompetition = "Beat_Your_Competition";
+  String cycles = "Cycles";
+  String eureka = "Eureka";
+  String ghostWalk = "Ghost_Walk";
+  String groove = "groove";
+  String newsroom = "Newsroom";
+  String startYourEngines = "Start_Your_Engines";
+  String theSimplest = "The_Simplest";
+  //
+  //Add Reading into Array
+  String directory = "../../../" + musicPathway;
+  println ( currentSong, directory );
+  String file = directory + groove + mp3FileName;
+  println (file);
+  playList[currentSong] = minim.loadFile( file );
+  file = directory + startYourEngines + mp3FileName;
+  println (file);
+  playList[currentSong+=1] = minim.loadFile( file );
+  println( currentSong, playList[currentSong] );
+  file = directory + beatYourCompetition + mp3FileName;
+  println (file);
+  playList[currentSong+=1] = minim.loadFile( file );
+  println( currentSong, playList[currentSong] );
+  file = directory + cycles + mp3FileName;
+  println (file);
+  playList[currentSong+=1] = minim.loadFile( file );
+  println( currentSong, playList[currentSong] );
+  file = directory + eureka + mp3FileName;
+  println (file);
+  playList[currentSong+=1] = minim.loadFile( file );
+  println( currentSong, playList[currentSong] );
+  file = directory + ghostWalk + mp3FileName;
+  println (file);
+  playList[currentSong+=1] = minim.loadFile( file );
+  println( currentSong, playList[currentSong] );
+  file = directory + newsroom + mp3FileName;
+  println (file);
+  playList[currentSong+=1] = minim.loadFile( file );
+  println( currentSong, playList[currentSong] );
+  file = directory + theSimplest + mp3FileName;
+  println (file);
+  playList[currentSong+=1] = minim.loadFile( file );
+  println( currentSong, playList[currentSong] );
+  //
+  currentSong = 0;
+  playList[currentSong].play();
+  //
   //Population
   metaDataX1 = appWidth*1/10; //Title
   metaDataY1 = appHeight*4/10;
