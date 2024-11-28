@@ -16,10 +16,10 @@ float metaDataX3, metaDataY3, metaDataWidth3, metaDataHeight3;
 Minim minim;
 int numberOfSongs = 8;
 AudioPlayer[] playList = new AudioPlayer[numberOfSongs];
-AudioMetaData[] playListTitleMetaData = new AudioMetaData[numberOfSongs];
-AudioMetaData[] playListPostionMetaData = new AudioMetaData[numberOfSongs]; //might change
-AudioMetaData[] playListTimeRemainingMetaData = new AudioMetaData[numberOfSongs]; //might change
-AudioMetaData[] playListTotalTimeMetaData = new AudioMetaData[numberOfSongs]; //might change
+//AudioMetaData[] playListTitleMetaData = new AudioMetaData[numberOfSongs];
+//AudioMetaData[] playListPostionMetaData = new AudioMetaData[numberOfSongs]; //might change
+//AudioMetaData[] playListTimeRemainingMetaData = new AudioMetaData[numberOfSongs]; //might change
+//AudioMetaData[] playListTotalTimeMetaData = new AudioMetaData[numberOfSongs]; //might change
 int currentSong = numberOfSongs - numberOfSongs;
 //Review if more meta data needed
 //
@@ -42,39 +42,39 @@ void setup()
   String startYourEngines = "Start_Your_Engines";
   String theSimplest = "The_Simplest";
   //
-  //Add Reading into Array
+  //Add Reading into Array: ../../../Music/groove.mp3
   String directory = "../../../" + musicPathway;
   println ( currentSong, directory );
   String file = directory + groove + mp3FileName;
   println (file);
-  playList[currentSong] = minim.loadFile( file );
-  file = directory + startYourEngines + mp3FileName;
+  playList[currentSong] = minim.loadFile( "../../../Music/groove.mp3" );
+  //file = directory + startYourEngines + mp3FileName;
   println (file);
-  playList[currentSong+=1] = minim.loadFile( file );
+  //playList[currentSong+=1] = minim.loadFile( file );
   println( currentSong, playList[currentSong] );
-  file = directory + beatYourCompetition + mp3FileName;
+  //file = directory + beatYourCompetition + mp3FileName;
   println (file);
-  playList[currentSong+=1] = minim.loadFile( file );
+  //playList[currentSong+=1] = minim.loadFile( file );
   println( currentSong, playList[currentSong] );
-  file = directory + cycles + mp3FileName;
+  //file = directory + cycles + mp3FileName;
   println (file);
-  playList[currentSong+=1] = minim.loadFile( file );
+  //playList[currentSong+=1] = minim.loadFile( file );
   println( currentSong, playList[currentSong] );
-  file = directory + eureka + mp3FileName;
+  //file = directory + eureka + mp3FileName;
   println (file);
-  playList[currentSong+=1] = minim.loadFile( file );
+  //playList[currentSong+=1] = minim.loadFile( file );
   println( currentSong, playList[currentSong] );
-  file = directory + ghostWalk + mp3FileName;
+  //file = directory + ghostWalk + mp3FileName;
   println (file);
-  playList[currentSong+=1] = minim.loadFile( file );
+  //playList[currentSong+=1] = minim.loadFile( file );
   println( currentSong, playList[currentSong] );
-  file = directory + newsroom + mp3FileName;
+  //file = directory + newsroom + mp3FileName;
   println (file);
-  playList[currentSong+=1] = minim.loadFile( file );
+  //playList[currentSong+=1] = minim.loadFile( file );
   println( currentSong, playList[currentSong] );
-  file = directory + theSimplest + mp3FileName;
+  //file = directory + theSimplest + mp3FileName;
   println (file);
-  playList[currentSong+=1] = minim.loadFile( file );
+  //playList[currentSong+=1] = minim.loadFile( file );
   println( currentSong, playList[currentSong] );
   //
   currentSong = 0;
