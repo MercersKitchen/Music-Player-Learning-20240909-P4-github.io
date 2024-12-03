@@ -105,7 +105,7 @@ void setup()
   //
   currentSong = 0;
   //
-  // For Prototyping Meta Data, print all information to the console first
+  /* For Prototyping Meta Data, print all information to the console first
   //Verifying Meta Data, 18 println's
   //See .mp3 Right-Click / Properties / Details
   println("\n"); //Two spaces: one for ln, one for /n escape
@@ -128,7 +128,7 @@ void setup()
   println( "Track: ", playListMetaData[currentSong].track() );
   println( "Genre: ", playListMetaData[currentSong].genre() );
   println( "Encoded: ", playListMetaData[currentSong].encoded() ); //how a computer reads the file
-  //
+  */
   //playList[currentSong].play(); //Testing Only
   //
   //Text Loading
@@ -153,10 +153,11 @@ void setup()
   metaDataY3 = appHeight*5/10;
   metaDataWidth3 = appWidth*4/10;
   //
-  //DIV //X, Y, Width, Height
-  rect( metaDataX1, metaDataY1, metaDataWidth1, metaDataHeight1 ); //Title
-  rect( metaDataX2, metaDataY2, metaDataWidth2, metaDataHeight2 ); //Position
-  rect( metaDataX3, metaDataY3, metaDataWidth3, metaDataHeight3 ); //Time Remaining | Total Song Length
+  //DIV: turn off onces repeated in VOID draw, saves systems resources
+  //X, Y, Width, Height
+  //rect( metaDataX1, metaDataY1, metaDataWidth1, metaDataHeight1 ); //Title
+  //rect( metaDataX2, metaDataY2, metaDataWidth2, metaDataHeight2 ); //Position
+  //rect( metaDataX3, metaDataY3, metaDataWidth3, metaDataHeight3 ); //Time Remaining | Total Song Length
   //
 } //End setup
 //
@@ -165,7 +166,7 @@ void draw() {
    - screen goes at front of draw(), repeating setup()
    */
   fill(resetDefaultInk);
-  //rect( metaDataX1, metaDataY1, metaDataWidth1, metaDataHeight1 );
+  rect( metaDataX1, metaDataY1, metaDataWidth1, metaDataHeight1 );
   rect( metaDataX2, metaDataY2, metaDataWidth2, metaDataHeight2 );
   rect( metaDataX3, metaDataY3, metaDataWidth3, metaDataHeight3 );
   //
@@ -180,7 +181,11 @@ void draw() {
   fill(ink);
   size = 43; //Change the number until it fits
   textFont( footerFont, size );
-  text( str (playList[currentSong].position() ), metaDataX3, metaDataY3, metaDataWidth3, metaDataHeight3 );
+  //int timeRemaining = playListMetaData[currentSong].length()/1000; // Needs Updating
+  int timeRemaining = playListMetaData[currentSong].length()/1000 - playList[currentSong].position()/1000; // Needs Updating
+  String concatTimeRemaining = str ( timeRemaining ) + " | " + str ( playListMetaData[currentSong].length()/1000 ) + " Seconds";
+  text( concatTimeRemaining, metaDataX3, metaDataY3, metaDataWidth3, metaDataHeight3 ); //Note: str(timeRemaining)
+  //NOTE: Students to format Minutes and Seconds
   //
   //Repeating Code, different from Static
   ink = ( randomColour == true ) ? color( random(0, 256), random(256), random(256) ) : purple ; //Ternary Operator
@@ -188,7 +193,7 @@ void draw() {
   fill(ink);
   size = 83; //Change the number until it fits
   textFont( phraseFont, size );
-  text( str ( playList[currentSong].position() ), metaDataX2, metaDataY2, metaDataWidth2, metaDataHeight2 );
+  text( str ( playList[currentSong].position()/1000 ), metaDataX2, metaDataY2, metaDataWidth2, metaDataHeight2 );
   //
   /*
   fill(resetDefaultInk);
@@ -202,13 +207,12 @@ void mousePressed() {
 } //End mousePressed
 //
 void keyPressed() {
-  /* Random Colour of .title()
+  // Random Colour of .title()
    if ( randomColour == true ) {
    randomColour = false;
    } else {
    randomColour = true;
    }
-   */
   //
   /* Key Board Short Cuts ... learning what the Music Buttons could be
    Note: CAP Lock with ||
