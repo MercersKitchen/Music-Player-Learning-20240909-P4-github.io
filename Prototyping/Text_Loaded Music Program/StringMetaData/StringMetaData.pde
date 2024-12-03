@@ -19,7 +19,6 @@ float metaDataX3, metaDataY3, metaDataWidth3, metaDataHeight3;
 PFont titleFont, footerFont, phraseFont;
 color ink, purple=#2C08FF, white=#FFFFFF, resetDefaultInk=white; //Not Night Mode Friendly
 int size;
-String title = "How do I write text?", footer="This is at the bottom.", phrase="ORA-Wahoo";
 Boolean randomColour=false;
 //
 void setup()
@@ -94,7 +93,7 @@ void setup()
    - Known: how many lines of code
    - WHILE is for unknown loop interations
    
-   for (int i=0; i<=numberOfSongs; i++) {
+   for (int i=0; i<numberOfSongs; i++) {
    playListMetaData[i] = playList[i].getMetaData();
    }
    */
@@ -191,12 +190,6 @@ void draw() {
   textFont( phraseFont, size );
   text( str ( playList[currentSong].position()/1000 ), metaDataX2, metaDataY2, metaDataWidth2, metaDataHeight2 );
   //
-  /*
-  fill(resetDefaultInk);
-   //rect( metaDataX1, metaDataY1, metaDataWidth1, metaDataHeight1 );
-   //rect( metaDataX2, metaDataY2, metaDataWidth2, metaDataHeight2 );
-   rect( metaDataX3, metaDataY3, metaDataWidth3, metaDataHeight3 );
-   */
 } //End draw
 //
 void mousePressed() {
