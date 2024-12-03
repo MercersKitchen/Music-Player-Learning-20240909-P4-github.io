@@ -44,7 +44,7 @@ void setup()
   String theSimplest = "The_Simplest";
   //
   //Add Reading into Array
-  String directory = "../../../" + musicPathway;
+  String directory = "../../../../" + musicPathway;
   //println ( currentSong, directory );
   String file = directory + groove + mp3FileName;
   playList[currentSong] = minim.loadFile( file );
@@ -74,30 +74,30 @@ void setup()
   //
   currentSong = 0;
   //
-  // NOTE: Lines of code repeating
-  playListMetaData[currentSong] = playList[currentSong].getMetaData(); //reads song meta 1, like song 1, mimicing array notation
-  currentSong++;
-  playListMetaData[currentSong] = playList[currentSong].getMetaData();
-  currentSong++;
-  playListMetaData[currentSong] = playList[currentSong].getMetaData();
-  currentSong++;
-  playListMetaData[currentSong] = playList[currentSong].getMetaData();
-  currentSong++;
-  playListMetaData[currentSong] = playList[currentSong].getMetaData();
-  currentSong++;
-  playListMetaData[currentSong] = playList[currentSong].getMetaData();
-  currentSong++;
-  playListMetaData[currentSong] = playList[currentSong].getMetaData();
-  currentSong++;
-  playListMetaData[currentSong] = playList[currentSong].getMetaData();
-  /* NOTE: Introduce FOR LOOP
+  /* NOTE: Lines of code repeating
+   playListMetaData[currentSong] = playList[currentSong].getMetaData(); //reads song meta 1, like song 1, mimicing array notation
+   currentSong++;
+   playListMetaData[currentSong] = playList[currentSong].getMetaData();
+   currentSong++;
+   playListMetaData[currentSong] = playList[currentSong].getMetaData();
+   currentSong++;
+   playListMetaData[currentSong] = playList[currentSong].getMetaData();
+   currentSong++;
+   playListMetaData[currentSong] = playList[currentSong].getMetaData();
+   currentSong++;
+   playListMetaData[currentSong] = playList[currentSong].getMetaData();
+   currentSong++;
+   playListMetaData[currentSong] = playList[currentSong].getMetaData();
+   currentSong++;
+   playListMetaData[currentSong] = playList[currentSong].getMetaData();
+   
+   NOTE: Introduce FOR LOOP
    - Known: how many lines of code
    - WHILE is for unknown loop interations
-   
-   for (int i=0; i<=numberOfSongs; i++) {
-   playListMetaData[i] = playList[i].getMetaData();
-   }
    */
+  for (int i=0; i<numberOfSongs; i++) {
+    playListMetaData[i] = playList[i].getMetaData();
+  }
   //
   currentSong = 0;
   //
