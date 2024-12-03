@@ -106,29 +106,29 @@ void setup()
   currentSong = 0;
   //
   /* For Prototyping Meta Data, print all information to the console first
-  //Verifying Meta Data, 18 println's
-  //See .mp3 Right-Click / Properties / Details
-  println("\n"); //Two spaces: one for ln, one for /n escape
-  println(currentSong, playListMetaData[currentSong] );
-  println( "File Name: ", playListMetaData[currentSong].fileName() );
-  println( "Song Length (in milliseconds): ", playListMetaData[currentSong].length() );
-  println( "Song Length (in seconds): ", playListMetaData[currentSong].length()/1000 );
-  println( "Song Length (in minutes & seconds): ", (playListMetaData[currentSong].length()/1000)/60, " minute", (playListMetaData[currentSong].length()/1000)-((playListMetaData[currentSong].length()/1000)/60 * 60), " seconds" );
-  println( "Song Title: ", playListMetaData[currentSong].title() );
-  println( "Author: ", playListMetaData[currentSong].author() ); //Song Writer or Performer
-  println( "Composer: ", playListMetaData[currentSong].composer() ); //Song Writer
-  println( "Orchestra: ", playListMetaData[currentSong].orchestra() );
-  println( "Album: ", playListMetaData[currentSong].album() );
-  println( "Disk: ", playListMetaData[currentSong].disc() );
-  println( "Publisher: ", playListMetaData[currentSong].publisher() );
-  println( "Date Release: ", playListMetaData[currentSong].date() );
-  println( "Copyright: ", playListMetaData[currentSong].copyright() );
-  println( "Comment: ", playListMetaData[currentSong].comment() );
-  println( "Lyrics: ", playListMetaData[currentSong].lyrics() );
-  println( "Track: ", playListMetaData[currentSong].track() );
-  println( "Genre: ", playListMetaData[currentSong].genre() );
-  println( "Encoded: ", playListMetaData[currentSong].encoded() ); //how a computer reads the file
-  */
+   //Verifying Meta Data, 18 println's
+   //See .mp3 Right-Click / Properties / Details
+   println("\n"); //Two spaces: one for ln, one for /n escape
+   println(currentSong, playListMetaData[currentSong] );
+   println( "File Name: ", playListMetaData[currentSong].fileName() );
+   println( "Song Length (in milliseconds): ", playListMetaData[currentSong].length() );
+   println( "Song Length (in seconds): ", playListMetaData[currentSong].length()/1000 );
+   println( "Song Length (in minutes & seconds): ", (playListMetaData[currentSong].length()/1000)/60, " minute", (playListMetaData[currentSong].length()/1000)-((playListMetaData[currentSong].length()/1000)/60 * 60), " seconds" );
+   println( "Song Title: ", playListMetaData[currentSong].title() );
+   println( "Author: ", playListMetaData[currentSong].author() ); //Song Writer or Performer
+   println( "Composer: ", playListMetaData[currentSong].composer() ); //Song Writer
+   println( "Orchestra: ", playListMetaData[currentSong].orchestra() );
+   println( "Album: ", playListMetaData[currentSong].album() );
+   println( "Disk: ", playListMetaData[currentSong].disc() );
+   println( "Publisher: ", playListMetaData[currentSong].publisher() );
+   println( "Date Release: ", playListMetaData[currentSong].date() );
+   println( "Copyright: ", playListMetaData[currentSong].copyright() );
+   println( "Comment: ", playListMetaData[currentSong].comment() );
+   println( "Lyrics: ", playListMetaData[currentSong].lyrics() );
+   println( "Track: ", playListMetaData[currentSong].track() );
+   println( "Genre: ", playListMetaData[currentSong].genre() );
+   println( "Encoded: ", playListMetaData[currentSong].encoded() ); //how a computer reads the file
+   */
   //playList[currentSong].play(); //Testing Only
   //
   //Text Loading
@@ -204,15 +204,25 @@ void draw() {
 } //End draw
 //
 void mousePressed() {
+  //Boolean for Click
+  //if() {} else {}
+  //
+  /* STOP Button Mouse Press, after Hoverover
+   Must have Hoverover to ensure mouse will activate, visual confirmation of algorithm
+   */
+  if ( mouseX>metaDataX1 && mouseX<metaDataX1+metaDataWidth1 && mouseY>metaDataY1 && mouseY<metaDataY1+metaDataHeight1 ) {
+    playList[currentSong].play(); // .loop(0) ... .play() matches keyPressed
+  }
+  //
 } //End mousePressed
 //
 void keyPressed() {
   // Random Colour of .title()
-   if ( randomColour == true ) {
-   randomColour = false;
-   } else {
-   randomColour = true;
-   }
+  if ( randomColour == true ) {
+    randomColour = false;
+  } else {
+    randomColour = true;
+  }
   //
   /* Key Board Short Cuts ... learning what the Music Buttons could be
    Note: CAP Lock with ||
