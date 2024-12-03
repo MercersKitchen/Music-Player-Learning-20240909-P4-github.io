@@ -22,8 +22,19 @@ int size;
 String title = "How do I write text?", footer="This is at the bottom.", phrase="ORA-Wahoo";
 Boolean randomColour=false;
 //
+int timerStart, enteredTimeSeconds, enteredTimeMilliSeconds, currentTime, countingTime, drawIteration=0;
+//
 void setup()
 {
+  //Measuring Effect of FOR, also see draw()
+  //Entered Time from Num Pad
+  enteredTimeSeconds = 5; //CAUTION: will need to convert minutes and hours to seconds
+  enteredTimeMilliSeconds = enteredTimeSeconds * 1000;
+  //Last line in Setup to adjust currentTime in void draw(){}
+  timerStart = millis(); //Measure program start time called "scope"
+  println("Program Start:", timerStart);
+  //
+  //
   fullScreen(); //size(900, 800);
   appWidth = displayWidth; //width
   appHeight = displayHeight; //height
@@ -44,74 +55,60 @@ void setup()
   String theSimplest = "The_Simplest";
   //
   //Add Reading into Array
-  String directory = "../../../../" + musicPathway;
+  String directory = "../../../../../" + musicPathway;
   //println ( currentSong, directory );
-  String file = ""; //NULL String Varaible
-  /*
-  file = directory + groove + mp3FileName;
-   playList[currentSong] = minim.loadFile( file );
-   //println ( currentSong, file, playList[currentSong] );
-   file = directory + startYourEngines + mp3FileName;
-   playList[currentSong+=1] = minim.loadFile( file );
-   //println ( currentSong, file, playList[currentSong] );
-   file = directory + beatYourCompetition + mp3FileName;
-   playList[currentSong+=1] = minim.loadFile( file );
-   //println ( currentSong, file, playList[currentSong] );
-   file = directory + cycles + mp3FileName;
-   playList[currentSong+=1] = minim.loadFile( file );
-   //println ( currentSong, file, playList[currentSong] );
-   file = directory + eureka + mp3FileName;
-   playList[currentSong+=1] = minim.loadFile( file );
-   //println ( currentSong, file, playList[currentSong] );
-   file = directory + ghostWalk + mp3FileName;
-   playList[currentSong+=1] = minim.loadFile( file );
-   //println ( currentSong, file, playList[currentSong] );
-   file = directory + newsroom + mp3FileName;
-   playList[currentSong+=1] = minim.loadFile( file );
-   //println ( currentSong, file, playList[currentSong] );
-   file = directory + theSimplest + mp3FileName;
-   playList[currentSong+=1] = minim.loadFile( file );
-   //println ( currentSong, file, playList[currentSong] );
-   */
+  String file = directory + groove + mp3FileName;
+  playList[currentSong] = minim.loadFile( file );
+  //println ( currentSong, file, playList[currentSong] );
+  file = directory + startYourEngines + mp3FileName;
+  playList[currentSong+=1] = minim.loadFile( file );
+  //println ( currentSong, file, playList[currentSong] );
+  file = directory + beatYourCompetition + mp3FileName;
+  playList[currentSong+=1] = minim.loadFile( file );
+  //println ( currentSong, file, playList[currentSong] );
+  file = directory + cycles + mp3FileName;
+  playList[currentSong+=1] = minim.loadFile( file );
+  //println ( currentSong, file, playList[currentSong] );
+  file = directory + eureka + mp3FileName;
+  playList[currentSong+=1] = minim.loadFile( file );
+  //println ( currentSong, file, playList[currentSong] );
+  file = directory + ghostWalk + mp3FileName;
+  playList[currentSong+=1] = minim.loadFile( file );
+  //println ( currentSong, file, playList[currentSong] );
+  file = directory + newsroom + mp3FileName;
+  playList[currentSong+=1] = minim.loadFile( file );
+  //println ( currentSong, file, playList[currentSong] );
+  file = directory + theSimplest + mp3FileName;
+  playList[currentSong+=1] = minim.loadFile( file );
+  //println ( currentSong, file, playList[currentSong] );
   //NOTE: How would this be turned into a FOR Loop, students to finish
-  for (int i=0; i<numberOfSongs; i++) {
-    if (i==0) file = directory + groove + mp3FileName;
-    if (i==1) file = directory + startYourEngines + mp3FileName;
-    if (i==2) file = directory + beatYourCompetition + mp3FileName;
-    if (i==3) file = directory + cycles + mp3FileName;
-    if (i==4) file = directory + eureka + mp3FileName;
-    if (i==5) file = directory + ghostWalk + mp3FileName;
-    if (i==6) file = directory + newsroom + mp3FileName;
-    if (i==7) file = directory + theSimplest + mp3FileName;
-    playList[i] = minim.loadFile( file );
-    }
-    //
-    currentSong = 0;
   //
-  /* NOTE: Lines of code repeating
-   playListMetaData[currentSong] = playList[currentSong].getMetaData(); //reads song meta 1, like song 1, mimicing array notation
-   currentSong++;
-   playListMetaData[currentSong] = playList[currentSong].getMetaData();
-   currentSong++;
-   playListMetaData[currentSong] = playList[currentSong].getMetaData();
-   currentSong++;
-   playListMetaData[currentSong] = playList[currentSong].getMetaData();
-   currentSong++;
-   playListMetaData[currentSong] = playList[currentSong].getMetaData();
-   currentSong++;
-   playListMetaData[currentSong] = playList[currentSong].getMetaData();
-   currentSong++;
-   playListMetaData[currentSong] = playList[currentSong].getMetaData();
-   currentSong++;
-   playListMetaData[currentSong] = playList[currentSong].getMetaData();
-   
-   NOTE: Introduce FOR LOOP
+  currentSong = 0;
+  //
+  // NOTE: Lines of code repeating
+  playListMetaData[currentSong] = playList[currentSong].getMetaData(); //reads song meta 1, like song 1, mimicing array notation
+  currentSong++;
+  playListMetaData[currentSong] = playList[currentSong].getMetaData();
+  currentSong++;
+  playListMetaData[currentSong] = playList[currentSong].getMetaData();
+  currentSong++;
+  playListMetaData[currentSong] = playList[currentSong].getMetaData();
+  currentSong++;
+  playListMetaData[currentSong] = playList[currentSong].getMetaData();
+  currentSong++;
+  playListMetaData[currentSong] = playList[currentSong].getMetaData();
+  currentSong++;
+  playListMetaData[currentSong] = playList[currentSong].getMetaData();
+  currentSong++;
+  playListMetaData[currentSong] = playList[currentSong].getMetaData();
+  /* NOTE: Introduce FOR LOOP
    - Known: how many lines of code
    - WHILE is for unknown loop interations
+   
+   for (int i=0; i<=numberOfSongs; i++) {
+   playListMetaData[i] = playList[i].getMetaData();
+   }
    */
-  for (int i=0; i<numberOfSongs; i++) {
-    playListMetaData[i] = playList[i].getMetaData();
-  }
   //
   currentSong = 0;
   //
@@ -172,6 +169,19 @@ void setup()
 } //End setup
 //
 void draw() {
+  //
+  //Measuring Time
+  currentTime = millis();
+  countingTime = currentTime - timerStart;
+  drawIteration++;
+  println("Begin", timerStart, "Draw Loop", drawIteration, "Draw", currentTime, enteredTimeMilliSeconds);
+  if ( countingTime >= enteredTimeMilliSeconds ) {
+    println("Timer is Done");
+    exit(); //CAUTION: stops the entire program as a prototype
+    //Instead of exit(), fix the BUG
+    //Use loop() & noLoop() on arrow and char R key interactions
+  }
+  //
   //
   /*Optical Illusion creating movement
    - screen goes at front of draw(), repeating setup()

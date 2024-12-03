@@ -22,8 +22,19 @@ int size;
 String title = "How do I write text?", footer="This is at the bottom.", phrase="ORA-Wahoo";
 Boolean randomColour=false;
 //
+int timerStart, enteredTimeSeconds, enteredTimeMilliSeconds, currentTime, countingTime, drawIteration=0;
+//
 void setup()
 {
+  //Measuring Effect of FOR, also see draw()
+  //Entered Time from Num Pad
+  enteredTimeSeconds = 5; //CAUTION: will need to convert minutes and hours to seconds
+  enteredTimeMilliSeconds = enteredTimeSeconds * 1000;
+  //Last line in Setup to adjust currentTime in void draw(){}
+  timerStart = millis(); //Measure program start time called "scope"
+  println("Program Start:", timerStart);
+  //
+  //
   fullScreen(); //size(900, 800);
   appWidth = displayWidth; //width
   appHeight = displayHeight; //height
@@ -44,7 +55,7 @@ void setup()
   String theSimplest = "The_Simplest";
   //
   //Add Reading into Array
-  String directory = "../../../../" + musicPathway;
+  String directory = "../../../../../" + musicPathway;
   //println ( currentSong, directory );
   String file = ""; //NULL String Varaible
   /*
@@ -172,6 +183,19 @@ void setup()
 } //End setup
 //
 void draw() {
+  //
+  //Measuring Time
+  currentTime = millis();
+  countingTime = currentTime - timerStart;
+  drawIteration++;
+  println("Begin", timerStart, "Draw Loop", drawIteration, "Draw", currentTime, enteredTimeMilliSeconds);
+  if ( countingTime >= enteredTimeMilliSeconds ) {
+    println("Timer is Done");
+    exit(); //CAUTION: stops the entire program as a prototype
+    //Instead of exit(), fix the BUG
+    //Use loop() & noLoop() on arrow and char R key interactions
+  }
+  //
   //
   /*Optical Illusion creating movement
    - screen goes at front of draw(), repeating setup()
