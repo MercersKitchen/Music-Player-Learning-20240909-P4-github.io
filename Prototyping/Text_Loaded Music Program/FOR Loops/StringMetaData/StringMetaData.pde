@@ -11,10 +11,6 @@ int numberOfSongs = 8; //Able to Autodetect based on Pathway
 AudioPlayer[] playList = new AudioPlayer[numberOfSongs];
 int currentSong = numberOfSongs - numberOfSongs;  //beginning current song as ZERO
 AudioMetaData[] playListMetaData = new AudioMetaData[numberOfSongs];
-//AudioMetaData[] playListPostionMetaData = new AudioMetaData[numberOfSongs]; //might change
-//AudioMetaData[] playListTimeRemainingMetaData = new AudioMetaData[numberOfSongs]; //might change
-//AudioMetaData[] playListTotalTimeMetaData = new AudioMetaData[numberOfSongs]; //might change
-//Review if more meta data needed
 //
 int appWidth, appHeight;
 float metaDataX1, metaDataY1, metaDataWidth1, metaDataHeight1;
