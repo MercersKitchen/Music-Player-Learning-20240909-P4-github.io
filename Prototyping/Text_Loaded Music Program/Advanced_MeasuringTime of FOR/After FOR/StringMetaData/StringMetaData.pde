@@ -212,7 +212,13 @@ void draw() {
   fill(ink);
   size = 47; //Change the number until it fits
   textFont( titleFont, size );
-  text( playListMetaData[currentSong].title(), metaDataX1, metaDataY1, metaDataWidth1, metaDataHeight1 );
+  /*Problem: .mp3 does not have the Meta Data Entered
+   - must inspect .mp3 properties / details for information
+   - what if Drag&Drop thus no inspection
+   - metadata=="", then should put something in for the user
+   */
+  String titleCheck = ( playListMetaData[currentSong].title()!="" ) ? "Title Exists": "Title Does not Exist" ; //Careful with "not ="
+  text( titleCheck, metaDataX1, metaDataY1, metaDataWidth1, metaDataHeight1 ); //playListMetaData[currentSong].title()
   fill(ink);
   size = 43; //Change the number until it fits
   textFont( footerFont, size );
