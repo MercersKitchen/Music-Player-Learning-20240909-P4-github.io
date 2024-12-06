@@ -18,9 +18,6 @@ void setup()
   //Music Player Constructor (see CS30 for full explanation)
   minim = new Minim(this);
   //
-  //DIVs: required, name each vararible
-  rect( X, Y, Width, Height);
-  //
 } //End setup
 //
 void draw() {

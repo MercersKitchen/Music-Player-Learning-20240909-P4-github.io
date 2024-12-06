@@ -1,17 +1,17 @@
 //Library - Minim
 //
 //Global Variables
-float image1X, image1Y, image1Width, image1Height;
+float nameX, nameY, nameWidth, nameHeight;
 //
 void setup()
 {
   //Population
-  image1X = ;
-  image1Y = ;
-  image1Width = ;
-  image1Height
-  //DIVs
-  rect( image1X, image1Y, image1Width, image1Height );
+  nameX = ;
+  nameY = ;
+  nameWidth = ;
+  nameHeight = ;
+  //DIVs: required, name each variable
+  rect( nameX, nameY, nameWidth, nameHeight );
   //
 } //End setup
 //
