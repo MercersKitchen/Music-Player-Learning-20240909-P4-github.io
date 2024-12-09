@@ -1,4 +1,6 @@
 
+DIVs: End on Wednesday, Dec 11
+
 Finishing Music Player with all Key Board Buttons
 What ones need to be graded
 - Does it work on my computer
