@@ -11,7 +11,7 @@ void setup()
   nameWidth = ;
   nameHeight = ;
   //DIVs: required, name each variable
-  rect( nameX, nameY, nameWidth, nameHeight );
+  rect( nameX, nameY, nameWidth, nameHeight ); //refer to your Case Study for # of DIVs
   //
 } //End setup
 //
