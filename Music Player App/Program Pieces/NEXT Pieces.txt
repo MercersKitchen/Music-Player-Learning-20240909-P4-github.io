@@ -5,3 +5,9 @@ Finishing Music Player with all Key Board Buttons
 What ones need to be graded
 - Does it work on my computer
 - PREVIOUS
+
+Data Strucutres
+- Song # | Meta Data for Strings and Numbers
+- Image # | Connected to Song #
+
+---
