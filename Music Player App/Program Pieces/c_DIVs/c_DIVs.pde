@@ -6,10 +6,10 @@ float nameX, nameY, nameWidth, nameHeight;
 void setup()
 {
   //Population
-  nameX = ;
-  nameY = ;
-  nameWidth = ;
-  nameHeight = ;
+  nameX = appWidth * percentNumber ; //Percent Numbers from Case Study
+  nameY = appHeight * percentNumber ;
+  nameWidth = appWidth * percentNumber ;
+  nameHeight = appHeight * percentNumber ;
   //DIVs: required, name each variable
   rect( nameX, nameY, nameWidth, nameHeight ); //refer to your Case Study for # of DIVs
   //
